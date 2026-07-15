@@ -5,6 +5,12 @@
   "type": "module",
   "description": "Public Graphock repository validation tooling",
   "scripts": {
-    "validate": "node scripts/verify-schema-lock.mjs && node scripts/validate-community-templates.mjs"
+    "validate": "node scripts/verify-schema-lock.mjs && node scripts/validate-community-templates.mjs",
+    "test": "node scripts/test-community-template-tooling.mjs"
+  },
+  "devDependencies": {
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
+    "yaml": "^2.9.0"
   }
 }

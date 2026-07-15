@@ -41,35 +41,34 @@ jobs:
               pull_number: context.payload.pull_request.number,
               per_page: 100,
             });
-            const templateDirs = new Map();
-            for (const file of files) {
-              const match = file.filename.match(/^community\/templates\/([^/]+)\//);
-              if (!match) continue;
-              const code = match[1];
-              const operation = file.status === 'removed' ? 'remove' : 'upsert';
-              templateDirs.set(code, operation === 'upsert' ? 'upsert' : (templateDirs.get(code) || 'remove'));
-            }
-            const operations = [...templateDirs].map(([code, operation]) => ({
-              operation,
-              sourceRepo: context.repo.owner + '/' + context.repo.repo,
-              sourcePath: `community/templates/${code}`,
+            const changed = files.filter((file) => /^community\/templates\/[^/]+(?:\/|$)/.test(file.filename));
+            const payload = {
+              sourceRepo: 'https://github.com/' + context.repo.owner + '/' + context.repo.repo,
               sourcePrUrl: context.payload.pull_request.html_url,
               sourceCommitSha: context.payload.pull_request.merge_commit_sha,
               sourceMergedAt: context.payload.pull_request.merged_at,
               authorGithub: context.payload.pull_request.user.login,
-            }));
-            core.setOutput('json', JSON.stringify({ operations }));
-            core.setOutput('count', String(operations.length));
+              files: changed.map((file) => ({
+                filename: file.filename,
+                status: file.status,
+              })),
+            };
+            require('fs').writeFileSync('/tmp/community-template-changed-files.json', JSON.stringify(payload, null, 2));
+            core.setOutput('count', String(changed.length));
+      - name: Generate community template submit payload
+        if: steps.payload.outputs.count != '0'
+        run: |
+          node scripts/build-community-submit-payload.mjs \
+            /tmp/community-template-changed-files.json \
+            /tmp/community-template-submit.json
       - name: Submit changed templates
         if: steps.payload.outputs.count != '0'
         env:
           COMMUNITY_TEMPLATE_SUBMIT_URL: ${{ vars.COMMUNITY_TEMPLATE_SUBMIT_URL }}
           COMMUNITY_TEMPLATE_SUBMIT_TOKEN: ${{ secrets.COMMUNITY_TEMPLATE_SUBMIT_TOKEN }}
-          PAYLOAD_JSON: ${{ steps.payload.outputs.json }}
         run: |
           test -n "$COMMUNITY_TEMPLATE_SUBMIT_URL"
           test -n "$COMMUNITY_TEMPLATE_SUBMIT_TOKEN"
-          printf '%s' "$PAYLOAD_JSON" > /tmp/community-template-submit.json
           curl --fail-with-body \
             -X POST "$COMMUNITY_TEMPLATE_SUBMIT_URL" \
             -H "content-type: application/json" \
