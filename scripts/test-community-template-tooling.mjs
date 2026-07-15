@@ -82,6 +82,30 @@ try {
       'name: Tooling Test Template',
       'categories:',
       '  - summarize',
+      'description: This manifest is missing prompt and must fail schema validation.',
+      'version: 1.0.0',
+      'license: MIT',
+      'config: {}'
+    ].join('\n')
+  )
+  const schemaInvalid = spawnSync('node', ['scripts/validate-community-templates.mjs'], {
+    cwd: root,
+    encoding: 'utf8'
+  })
+  assert(schemaInvalid.status !== 0, 'schema-invalid manifest should fail validation')
+  assert(
+    schemaInvalid.stderr.includes('schema violation'),
+    'schema-invalid manifest should explain canonical schema rejection'
+  )
+
+  writeFileSync(
+    join(templateDir, 'template.yaml'),
+    [
+      'schema_version: "1"',
+      'code: tooling-test-template',
+      'name: Tooling Test Template',
+      'categories:',
+      '  - summarize',
       'description: This manifest includes trusted metadata and must fail.',
       'version: 1.0.0',
       'license: MIT',
