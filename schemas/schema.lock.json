@@ -1,0 +1,17 @@
+{
+  "source": {
+    "repository": "graphock-harness-spec",
+    "tag": "v0.3.0",
+    "commit": "82fc3400c5b512ca7b36240fa71a771dee50732c"
+  },
+  "schemas": [
+    {
+      "path": "schemas/community-template-manifest.schema.json",
+      "sha256": "e5f33e4fb9ad7b0dae7d6ec791a4ee5e06b9841c66fa9cbcfd555357b361af0f"
+    },
+    {
+      "path": "schemas/graph-import-mapping.schema.json",
+      "sha256": "f609a48fc76c6c568bbf67b4df001ad0833fb67b4942b70108dcacff44c7dd3a"
+    }
+  ]
+}

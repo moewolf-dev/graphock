@@ -1,0 +1,77 @@
+name: submit community templates on merge
+
+on:
+  pull_request:
+    types: [closed]
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+concurrency:
+  group: community-template-submit
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    if: >-
+      github.event.pull_request.merged == true &&
+      github.repository == 'moewolf-dev/graphock' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - run: npm ci
+      - run: npm run validate
+      - name: Build community template submit payload
+        id: payload
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const files = await github.paginate(github.rest.pulls.listFiles, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.pull_request.number,
+              per_page: 100,
+            });
+            const templateDirs = new Map();
+            for (const file of files) {
+              const match = file.filename.match(/^community\/templates\/([^/]+)\//);
+              if (!match) continue;
+              const code = match[1];
+              const operation = file.status === 'removed' ? 'remove' : 'upsert';
+              templateDirs.set(code, operation === 'upsert' ? 'upsert' : (templateDirs.get(code) || 'remove'));
+            }
+            const operations = [...templateDirs].map(([code, operation]) => ({
+              operation,
+              sourceRepo: context.repo.owner + '/' + context.repo.repo,
+              sourcePath: `community/templates/${code}`,
+              sourcePrUrl: context.payload.pull_request.html_url,
+              sourceCommitSha: context.payload.pull_request.merge_commit_sha,
+              sourceMergedAt: context.payload.pull_request.merged_at,
+              authorGithub: context.payload.pull_request.user.login,
+            }));
+            core.setOutput('json', JSON.stringify({ operations }));
+            core.setOutput('count', String(operations.length));
+      - name: Submit changed templates
+        if: steps.payload.outputs.count != '0'
+        env:
+          COMMUNITY_TEMPLATE_SUBMIT_URL: ${{ vars.COMMUNITY_TEMPLATE_SUBMIT_URL }}
+          COMMUNITY_TEMPLATE_SUBMIT_TOKEN: ${{ secrets.COMMUNITY_TEMPLATE_SUBMIT_TOKEN }}
+          PAYLOAD_JSON: ${{ steps.payload.outputs.json }}
+        run: |
+          test -n "$COMMUNITY_TEMPLATE_SUBMIT_URL"
+          test -n "$COMMUNITY_TEMPLATE_SUBMIT_TOKEN"
+          printf '%s' "$PAYLOAD_JSON" > /tmp/community-template-submit.json
+          curl --fail-with-body \
+            -X POST "$COMMUNITY_TEMPLATE_SUBMIT_URL" \
+            -H "content-type: application/json" \
+            -H "x-graphock-community-submit-token: $COMMUNITY_TEMPLATE_SUBMIT_TOKEN" \
+            --data-binary @/tmp/community-template-submit.json

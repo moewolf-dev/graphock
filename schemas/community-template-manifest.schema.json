@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://graphock.dev/harness-spec/community-template-manifest.schema.json",
+  "title": "CommunityTemplateManifest",
+  "description": "Canonical manifest for a community-submitted Graphock template. This schema describes contributor-authored template metadata only; trusted source metadata such as repository, path, PR URL, commit SHA, merge time, and GitHub author must be supplied by the submission workflow, not by template.yaml.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1",
+      "description": "Manifest schema version."
+    },
+    "code": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]{2,63}$",
+      "description": "Stable public template code, unique across the community template catalog."
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120,
+      "description": "Human-readable template name."
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1000,
+      "description": "Short public description shown in catalog cards and detail pages."
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(?:[-+][0-9A-Za-z.-]+)?$",
+      "description": "Template version using semver."
+    },
+    "categories": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 8,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9._-]{1,39}$"
+      },
+      "description": "Lowercase category slugs used for browsing and filtering."
+    },
+    "license": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9-.+]+$",
+      "description": "SPDX license identifier. The public repository validator applies the owner-approved allowlist."
+    },
+    "prompt": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "inline": {
+          "type": "string",
+          "maxLength": 20000,
+          "description": "Inline prompt text. Validators must not print this value in full."
+        },
+        "path": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._/-]{0,199}$",
+          "maxLength": 200,
+          "description": "Template-relative prompt file path."
+        }
+      },
+      "oneOf": [
+        { "required": ["inline"] },
+        { "required": ["path"] }
+      ],
+      "description": "Prompt body, either inline or referenced by a template-relative file path."
+    },
+    "config": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Template runtime configuration. Consumers must validate any provider-specific fields before execution."
+    },
+    "mapping_config": {
+      "$ref": "./graph-import-mapping.schema.json",
+      "description": "Optional graph import mapping used when the template creates a local graph database."
+    },
+    "readme_path": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._/-]{0,199}$",
+      "maxLength": 200,
+      "description": "Optional template-relative README path."
+    },
+    "keywords": {
+      "type": "array",
+      "maxItems": 20,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 40
+      },
+      "description": "Optional search keywords."
+    }
+  },
+  "required": [
+    "schema_version",
+    "code",
+    "name",
+    "categories",
+    "description",
+    "prompt",
+    "config",
+    "version",
+    "license"
+  ]
+}

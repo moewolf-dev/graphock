@@ -1,0 +1,185 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://graphock.dev/harness-spec/graph-import-mapping.schema.json",
+  "title": "GraphImportMapping",
+  "description": "Canonical graph import mapping draft used by Graphock to convert selected files or task artifacts into a LadybugDB property graph. The mapping is a proposal until the user confirms it; import execution must be transactional.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1",
+      "description": "Mapping schema version."
+    },
+    "node_mappings": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 64,
+      "items": {
+        "$ref": "#/$defs/NodeMapping"
+      },
+      "description": "Node table mappings."
+    },
+    "edge_mappings": {
+      "type": "array",
+      "maxItems": 128,
+      "items": {
+        "$ref": "#/$defs/EdgeMapping"
+      },
+      "description": "Relationship table mappings."
+    },
+    "defaults": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "missing_node_policy": {
+          "type": "string",
+          "enum": ["error", "skip_edge", "create_stub"],
+          "default": "error",
+          "description": "Default behavior when an edge references a missing endpoint."
+        },
+        "error_row_policy": {
+          "type": "string",
+          "enum": ["fail_import", "skip_row"],
+          "default": "fail_import",
+          "description": "Default behavior for malformed rows."
+        }
+      },
+      "description": "Import-wide defaults."
+    }
+  },
+  "required": ["schema_version", "node_mappings"],
+  "$defs": {
+    "FieldMapping": {
+      "title": "FieldMapping",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "property": {
+          "type": "string",
+          "pattern": "^[A-Za-z_][A-Za-z0-9_]{0,63}$",
+          "description": "Target graph property name."
+        },
+        "source": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "description": "Source column, JSON pointer, or extractor output key."
+        },
+        "type": {
+          "type": "string",
+          "enum": ["string", "int64", "double", "bool", "date", "datetime", "json"],
+          "description": "Target property type."
+        },
+        "required": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether missing or empty values fail the row."
+        },
+        "transform": {
+          "type": "string",
+          "enum": ["none", "trim", "lowercase", "uppercase", "json_parse"],
+          "default": "none",
+          "description": "Simple deterministic transform applied before type coercion."
+        }
+      },
+      "required": ["property", "source", "type"]
+    },
+    "NodeMapping": {
+      "title": "NodeMapping",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "type": "string",
+          "pattern": "^[A-Za-z_][A-Za-z0-9_]{0,63}$",
+          "description": "Target node label."
+        },
+        "source_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,119}$",
+          "minLength": 1,
+          "maxLength": 120,
+          "description": "Logical source identifier resolved by the app; not a file path."
+        },
+        "id": {
+          "$ref": "#/$defs/FieldMapping",
+          "description": "Stable node identity mapping used for de-duplication."
+        },
+        "properties": {
+          "type": "array",
+          "maxItems": 128,
+          "items": {
+            "$ref": "#/$defs/FieldMapping"
+          },
+          "description": "Node property mappings."
+        },
+        "dedupe": {
+          "type": "string",
+          "enum": ["by_id", "none"],
+          "default": "by_id",
+          "description": "Node de-duplication strategy."
+        }
+      },
+      "required": ["label", "source_id", "id"]
+    },
+    "EdgeEndpoint": {
+      "title": "EdgeEndpoint",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "type": "string",
+          "pattern": "^[A-Za-z_][A-Za-z0-9_]{0,63}$",
+          "description": "Endpoint node label."
+        },
+        "key": {
+          "$ref": "#/$defs/FieldMapping",
+          "description": "Endpoint key mapping."
+        }
+      },
+      "required": ["label", "key"]
+    },
+    "EdgeMapping": {
+      "title": "EdgeMapping",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string",
+          "pattern": "^[A-Za-z_][A-Za-z0-9_]{0,63}$",
+          "description": "Target relationship type."
+        },
+        "source_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,119}$",
+          "minLength": 1,
+          "maxLength": 120,
+          "description": "Logical source identifier resolved by the app; not a file path."
+        },
+        "source": {
+          "$ref": "#/$defs/EdgeEndpoint",
+          "description": "Source endpoint mapping."
+        },
+        "target": {
+          "$ref": "#/$defs/EdgeEndpoint",
+          "description": "Destination endpoint mapping."
+        },
+        "properties": {
+          "type": "array",
+          "maxItems": 128,
+          "items": {
+            "$ref": "#/$defs/FieldMapping"
+          },
+          "description": "Edge property mappings."
+        },
+        "missing_node_policy": {
+          "type": "string",
+          "enum": ["error", "skip_edge", "create_stub"],
+          "description": "Behavior when an endpoint key cannot be resolved."
+        }
+      },
+      "required": ["type", "source_id", "source", "target"]
+    }
+  }
+}

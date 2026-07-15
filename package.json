@@ -1,0 +1,10 @@
+{
+  "name": "graphock-public",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Public Graphock repository validation tooling",
+  "scripts": {
+    "validate": "node scripts/verify-schema-lock.mjs && node scripts/validate-community-templates.mjs"
+  }
+}
