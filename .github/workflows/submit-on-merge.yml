@@ -43,7 +43,7 @@ jobs:
             });
             const changed = files.filter((file) => /^community\/templates\/[^/]+(?:\/|$)/.test(file.filename));
             const payload = {
-              sourceRepo: 'https://github.com/' + context.repo.owner + '/' + context.repo.repo,
+              sourceRepo: 'moewolf-dev/graphock',
               sourcePrUrl: context.payload.pull_request.html_url,
               sourceCommitSha: context.payload.pull_request.merge_commit_sha,
               sourceMergedAt: context.payload.pull_request.merged_at,

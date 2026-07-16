@@ -12,6 +12,22 @@ const payloadPath = join(root, '.tmp-community-submit-payload.json')
 
 try {
   rmSync(templateDir, { recursive: true, force: true })
+  mkdirSync(templateDir, { recursive: true })
+  writeValidTemplateFixture()
+
+  const closedPolicy = spawnSync('node', ['scripts/validate-community-templates.mjs'], {
+    cwd: root,
+    encoding: 'utf8'
+  })
+  assert(closedPolicy.status !== 0, 'closed license policy should reject non-empty submissions')
+  assert(
+    closedPolicy.stderr.includes(
+      'Community template submissions are not open yet: template license allowlist is not approved.'
+    ),
+    'closed license policy should explain owner allowlist approval is required'
+  )
+  rmSync(templateDir, { recursive: true, force: true })
+
   writeFileSync(
     policyPath,
     policyBackup
@@ -23,23 +39,7 @@ try {
   )
 
   mkdirSync(templateDir, { recursive: true })
-  writeFileSync(join(templateDir, 'prompt.md'), 'Summarize the input as concise bullets.\n')
-  writeFileSync(
-    join(templateDir, 'template.yaml'),
-    [
-      'schema_version: "1"',
-      'code: tooling-test-template',
-      'name: Tooling Test Template',
-      'categories:',
-      '  - summarize',
-      'description: A valid fixture for submit payload generation.',
-      'version: 1.0.0',
-      'license: MIT',
-      'prompt:',
-      '  path: prompt.md',
-      'config: {}'
-    ].join('\n')
-  )
+  writeValidTemplateFixture()
   execFileSync('node', ['scripts/validate-community-templates.mjs'], {
     cwd: root,
     stdio: 'pipe'
@@ -49,7 +49,7 @@ try {
     changedPath,
     JSON.stringify(
       {
-        sourceRepo: 'https://github.com/moewolf-dev/graphock',
+        sourceRepo: 'moewolf-dev/graphock',
         sourcePrUrl: 'https://github.com/moewolf-dev/graphock/pull/1',
         sourceCommitSha: '0123456789abcdef0123456789abcdef01234567',
         sourceMergedAt: '2026-07-15T00:00:00Z',
@@ -125,6 +125,32 @@ try {
     'invalid manifest should explain trusted metadata rejection'
   )
 
+  writeFileSync(
+    join(templateDir, 'template.yaml'),
+    [
+      'schema_version: "1"',
+      'code: tooling-test-template',
+      'name: Tooling Test Template',
+      'categories:',
+      '  - summarize',
+      'description: This manifest uses an SPDX-shaped but unapproved license.',
+      'version: 1.0.0',
+      'license: GPL-3.0-only',
+      'prompt:',
+      '  inline: bad',
+      'config: {}'
+    ].join('\n')
+  )
+  const unapprovedLicense = spawnSync('node', ['scripts/validate-community-templates.mjs'], {
+    cwd: root,
+    encoding: 'utf8'
+  })
+  assert(unapprovedLicense.status !== 0, 'unapproved license should fail validation')
+  assert(
+    unapprovedLicense.stderr.includes('template license is not approved: tooling-test-template'),
+    'unapproved license rejection should not silently accept SPDX-shaped identifiers'
+  )
+
   console.log('community template tooling tests OK')
 } finally {
   writeFileSync(policyPath, policyBackup)
@@ -135,4 +161,24 @@ try {
 
 function assert(condition, message) {
   if (!condition) throw new Error(message)
+}
+
+function writeValidTemplateFixture() {
+  writeFileSync(join(templateDir, 'prompt.md'), 'Summarize the input as concise bullets.\n')
+  writeFileSync(
+    join(templateDir, 'template.yaml'),
+    [
+      'schema_version: "1"',
+      'code: tooling-test-template',
+      'name: Tooling Test Template',
+      'categories:',
+      '  - summarize',
+      'description: A valid fixture for submit payload generation.',
+      'version: 1.0.0',
+      'license: MIT',
+      'prompt:',
+      '  path: prompt.md',
+      'config: {}'
+    ].join('\n')
+  )
 }
