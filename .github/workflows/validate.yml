@@ -18,3 +18,57 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run validate
+
+  notify_website:
+    if: github.event_name == 'push' && github.repository == 'moewolf-dev/graphock' && github.ref == 'refs/heads/main'
+    needs: validate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Detect validated public content changes
+        id: changes
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
+          CURRENT_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          if [[ ! "$BEFORE_SHA" =~ ^[0-9a-f]{40}$ || ! "$CURRENT_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "Push event did not include full commit SHAs" >&2
+            exit 2
+          fi
+          git diff --name-only "$BEFORE_SHA" "$CURRENT_SHA" > /tmp/changed-files.txt
+          if grep -Eq '^(docs/|community/|schemas/community-template-manifest\.schema\.json$|LICENSE_POLICY\.md$)' /tmp/changed-files.txt; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Create narrowly scoped website sync token
+        if: steps.changes.outputs.changed == 'true'
+        id: app-token
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ vars.WEBSITE_SYNC_APP_CLIENT_ID }}
+          private-key: ${{ secrets.WEBSITE_SYNC_APP_PRIVATE_KEY }}
+          owner: moewolf-dev
+          repositories: graphock-website
+          permission-contents: write
+      - name: Dispatch the exact validated public commit
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          PUBLIC_SHA: ${{ github.sha }}
+          PUBLIC_REPOSITORY: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          [[ "$PUBLIC_REPOSITORY" == "moewolf-dev/graphock" ]]
+          [[ "$GITHUB_REF" == "refs/heads/main" ]]
+          [[ "$PUBLIC_SHA" =~ ^[0-9a-f]{40}$ ]]
+          jq -n \
+            --arg public_sha "$PUBLIC_SHA" \
+            --arg source_repository "$PUBLIC_REPOSITORY" \
+            '{event_type:"public-content-merged",client_payload:{public_sha:$public_sha,source_repository:$source_repository}}' \
+            | gh api --method POST repos/moewolf-dev/graphock-website/dispatches --input -
