@@ -45,6 +45,22 @@ try {
     stdio: 'pipe'
   })
 
+  writeFileSync(join(templateDir, 'locales/en.md'), '<script>alert(1)</script>\n')
+  const activeLocaleHtml = spawnSync('node', ['scripts/validate-community-templates.mjs'], {
+    cwd: root,
+    encoding: 'utf8'
+  })
+  assert(activeLocaleHtml.status !== 0, 'localized catalog copy must reject executable HTML')
+  assert(activeLocaleHtml.stderr.includes('executable HTML is forbidden'), 'localized HTML rejection should be explicit')
+  writeFileSync(join(templateDir, 'locales/en.md'), ['api_', 'key', ': ', 'abcdefghijklmnop', '1234', '\n'].join(''))
+  const secretLocale = spawnSync('node', ['scripts/validate-community-templates.mjs'], {
+    cwd: root,
+    encoding: 'utf8'
+  })
+  assert(secretLocale.status !== 0, 'localized catalog copy must reject secret-like text')
+  assert(secretLocale.stderr.includes('possible secret in localized description'), 'localized secret rejection should be explicit')
+  writeFileSync(join(templateDir, 'locales/en.md'), '# Research summary\n\nA translated catalog description.\n')
+
   writeFileSync(
     changedPath,
     JSON.stringify(
@@ -164,6 +180,8 @@ function assert(condition, message) {
 }
 
 function writeValidTemplateFixture() {
+  mkdirSync(join(templateDir, 'locales'), { recursive: true })
+  writeFileSync(join(templateDir, 'locales/en.md'), '# Research summary\n\nA translated catalog description.\n')
   writeFileSync(join(templateDir, 'prompt.md'), 'Summarize the input as concise bullets.\n')
   writeFileSync(
     join(templateDir, 'template.yaml'),

@@ -87,6 +87,7 @@ function validateTemplateDir(templateDir, dirName, seenCodes) {
   }
 
   scanDir(templateDir, errors)
+  validateLocalizedDescriptions(templateDir, dirName, errors)
   const files = readdirSync(templateDir)
   if (files.length > 50) errors.push(`too many files in template: ${dirName}`)
 
@@ -156,6 +157,43 @@ function validateTemplateDir(templateDir, dirName, seenCodes) {
       promptText,
       checksum
     }
+  }
+}
+
+function validateLocalizedDescriptions(templateDir, dirName, errors) {
+  const localeDirectory = join(templateDir, 'locales')
+  try {
+    const directoryStat = lstatSync(localeDirectory)
+    if (directoryStat.isSymbolicLink() || !directoryStat.isDirectory()) {
+      errors.push(`template locales must be a regular directory: ${dirName}`)
+      return
+    }
+  } catch (error) {
+    if (error.code === 'ENOENT') return
+    throw error
+  }
+
+  const supportedLocales = new Set(['en', 'zh', 'fr', 'es', 'ja'])
+  for (const entry of readdirSync(localeDirectory, { withFileTypes: true })) {
+    const fullPath = join(localeDirectory, entry.name)
+    const stat = lstatSync(fullPath)
+    if (stat.isSymbolicLink() || !entry.isFile()) {
+      errors.push(`localized descriptions must be regular files: ${dirName}/locales/${entry.name}`)
+      continue
+    }
+    const locale = entry.name.replace(/\.md$/i, '')
+    if (!entry.name.endsWith('.md') || !supportedLocales.has(locale)) {
+      errors.push(`unsupported localized description: ${dirName}/locales/${entry.name}`)
+      continue
+    }
+    if (stat.size > 65536) {
+      errors.push(`localized description too large: ${dirName}/${entry.name}`)
+      continue
+    }
+    const text = readFileSync(fullPath, 'utf8')
+    if (text.includes('\r')) errors.push(`localized description must use LF line endings: ${dirName}/${entry.name}`)
+    if (/<\s*(script|iframe|object|embed)\b/i.test(text)) errors.push(`executable HTML is forbidden in localized description: ${dirName}/${entry.name}`)
+    scanSecretPatterns(text, `localized description: ${dirName}/${entry.name}`, errors)
   }
 }
 
