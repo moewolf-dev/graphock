@@ -1,0 +1,934 @@
+{
+  "source": "reviewed initial product-documentation set",
+  "policy": "user-facing docs only; development release notes and generic examples excluded",
+  "files": [
+    {
+      "source": "src/analyze-data/calculations/index.md",
+      "target": "docs/en/analyze-data/calculations/index.md"
+    },
+    {
+      "source": "src/analyze-data/drill-down.md",
+      "target": "docs/en/analyze-data/drill-down.md"
+    },
+    {
+      "source": "src/analyze-data/filter-sort.md",
+      "target": "docs/en/analyze-data/filter-sort.md"
+    },
+    {
+      "source": "src/analyze-data/index.md",
+      "target": "docs/en/analyze-data/index.md"
+    },
+    {
+      "source": "src/analyze-data/pattern-discovery.md",
+      "target": "docs/en/analyze-data/pattern-discovery.md"
+    },
+    {
+      "source": "src/analyze-data/trend-analysis.md",
+      "target": "docs/en/analyze-data/trend-analysis.md"
+    },
+    {
+      "source": "src/create-visualizations/best-practices.md",
+      "target": "docs/en/create-visualizations/best-practices.md"
+    },
+    {
+      "source": "src/create-visualizations/build-dashboard.md",
+      "target": "docs/en/create-visualizations/build-dashboard.md"
+    },
+    {
+      "source": "src/create-visualizations/chart-types/index.md",
+      "target": "docs/en/create-visualizations/chart-types/index.md"
+    },
+    {
+      "source": "src/create-visualizations/index.md",
+      "target": "docs/en/create-visualizations/index.md"
+    },
+    {
+      "source": "src/customize/colors-styles.md",
+      "target": "docs/en/customize/colors-styles.md"
+    },
+    {
+      "source": "src/customize/format-visuals.md",
+      "target": "docs/en/customize/format-visuals.md"
+    },
+    {
+      "source": "src/customize/index.md",
+      "target": "docs/en/customize/index.md"
+    },
+    {
+      "source": "src/customize/labels-tooltips.md",
+      "target": "docs/en/customize/labels-tooltips.md"
+    },
+    {
+      "source": "src/customize/layouts.md",
+      "target": "docs/en/customize/layouts.md"
+    },
+    {
+      "source": "src/customize/themes.md",
+      "target": "docs/en/customize/themes.md"
+    },
+    {
+      "source": "src/examples/customer-analytics.md",
+      "target": "docs/en/examples/customer-analytics.md"
+    },
+    {
+      "source": "src/examples/index.md",
+      "target": "docs/en/examples/index.md"
+    },
+    {
+      "source": "src/examples/project-management.md",
+      "target": "docs/en/examples/project-management.md"
+    },
+    {
+      "source": "src/examples/sales-dashboard.md",
+      "target": "docs/en/examples/sales-dashboard.md"
+    },
+    {
+      "source": "src/examples/sample-datasets.md",
+      "target": "docs/en/examples/sample-datasets.md"
+    },
+    {
+      "source": "src/examples/social-network.md",
+      "target": "docs/en/examples/social-network.md"
+    },
+    {
+      "source": "src/get-data/connect-sources.md",
+      "target": "docs/en/get-data/connect-sources.md"
+    },
+    {
+      "source": "src/get-data/data-formats.md",
+      "target": "docs/en/get-data/data-formats.md"
+    },
+    {
+      "source": "src/get-data/data-preparation/index.md",
+      "target": "docs/en/get-data/data-preparation/index.md"
+    },
+    {
+      "source": "src/get-data/index.md",
+      "target": "docs/en/get-data/index.md"
+    },
+    {
+      "source": "src/get-data/refresh-data.md",
+      "target": "docs/en/get-data/refresh-data.md"
+    },
+    {
+      "source": "src/getting-started/first-visualization.md",
+      "target": "docs/en/getting-started/first-visualization.md"
+    },
+    {
+      "source": "src/getting-started/index.md",
+      "target": "docs/en/getting-started/index.md"
+    },
+    {
+      "source": "src/getting-started/sign-up.md",
+      "target": "docs/en/getting-started/sign-up.md"
+    },
+    {
+      "source": "src/getting-started/tour-interface.md",
+      "target": "docs/en/getting-started/tour-interface.md"
+    },
+    {
+      "source": "src/index.md",
+      "target": "docs/en/index.md"
+    },
+    {
+      "source": "src/reference/data-limits.md",
+      "target": "docs/en/reference/data-limits.md"
+    },
+    {
+      "source": "src/reference/faq.md",
+      "target": "docs/en/reference/faq.md"
+    },
+    {
+      "source": "src/reference/index.md",
+      "target": "docs/en/reference/index.md"
+    },
+    {
+      "source": "src/reference/keyboard-shortcuts.md",
+      "target": "docs/en/reference/keyboard-shortcuts.md"
+    },
+    {
+      "source": "src/reference/supported-languages.md",
+      "target": "docs/en/reference/supported-languages.md"
+    },
+    {
+      "source": "src/share-collaborate/collaborate-real-time.md",
+      "target": "docs/en/share-collaborate/collaborate-real-time.md"
+    },
+    {
+      "source": "src/share-collaborate/comments-feedback.md",
+      "target": "docs/en/share-collaborate/comments-feedback.md"
+    },
+    {
+      "source": "src/share-collaborate/export-options.md",
+      "target": "docs/en/share-collaborate/export-options.md"
+    },
+    {
+      "source": "src/share-collaborate/index.md",
+      "target": "docs/en/share-collaborate/index.md"
+    },
+    {
+      "source": "src/share-collaborate/permissions-security.md",
+      "target": "docs/en/share-collaborate/permissions-security.md"
+    },
+    {
+      "source": "src/share-collaborate/publish-dashboards.md",
+      "target": "docs/en/share-collaborate/publish-dashboards.md"
+    },
+    {
+      "source": "src/share-collaborate/share-reports.md",
+      "target": "docs/en/share-collaborate/share-reports.md"
+    },
+    {
+      "source": "src/training/index.md",
+      "target": "docs/en/training/index.md"
+    },
+    {
+      "source": "src/training/learning-paths.md",
+      "target": "docs/en/training/learning-paths.md"
+    },
+    {
+      "source": "src/training/video-tutorials.md",
+      "target": "docs/en/training/video-tutorials.md"
+    },
+    {
+      "source": "src/what-s-new/index.md",
+      "target": "docs/en/what-s-new/index.md"
+    },
+    {
+      "source": "src/cn/analyze-data/drill-down.md",
+      "target": "docs/zh/analyze-data/drill-down.md"
+    },
+    {
+      "source": "src/cn/analyze-data/filter-sort.md",
+      "target": "docs/zh/analyze-data/filter-sort.md"
+    },
+    {
+      "source": "src/cn/analyze-data/index.md",
+      "target": "docs/zh/analyze-data/index.md"
+    },
+    {
+      "source": "src/cn/analyze-data/pattern-discovery.md",
+      "target": "docs/zh/analyze-data/pattern-discovery.md"
+    },
+    {
+      "source": "src/cn/analyze-data/trend-analysis.md",
+      "target": "docs/zh/analyze-data/trend-analysis.md"
+    },
+    {
+      "source": "src/cn/create-visualizations/best-practices.md",
+      "target": "docs/zh/create-visualizations/best-practices.md"
+    },
+    {
+      "source": "src/cn/create-visualizations/build-dashboard.md",
+      "target": "docs/zh/create-visualizations/build-dashboard.md"
+    },
+    {
+      "source": "src/cn/create-visualizations/index.md",
+      "target": "docs/zh/create-visualizations/index.md"
+    },
+    {
+      "source": "src/cn/customize/colors-styles.md",
+      "target": "docs/zh/customize/colors-styles.md"
+    },
+    {
+      "source": "src/cn/customize/format-visuals.md",
+      "target": "docs/zh/customize/format-visuals.md"
+    },
+    {
+      "source": "src/cn/customize/index.md",
+      "target": "docs/zh/customize/index.md"
+    },
+    {
+      "source": "src/cn/customize/labels-tooltips.md",
+      "target": "docs/zh/customize/labels-tooltips.md"
+    },
+    {
+      "source": "src/cn/customize/layouts.md",
+      "target": "docs/zh/customize/layouts.md"
+    },
+    {
+      "source": "src/cn/customize/themes.md",
+      "target": "docs/zh/customize/themes.md"
+    },
+    {
+      "source": "src/cn/examples/customer-analytics.md",
+      "target": "docs/zh/examples/customer-analytics.md"
+    },
+    {
+      "source": "src/cn/examples/index.md",
+      "target": "docs/zh/examples/index.md"
+    },
+    {
+      "source": "src/cn/examples/project-management.md",
+      "target": "docs/zh/examples/project-management.md"
+    },
+    {
+      "source": "src/cn/examples/sales-dashboard.md",
+      "target": "docs/zh/examples/sales-dashboard.md"
+    },
+    {
+      "source": "src/cn/examples/sample-datasets.md",
+      "target": "docs/zh/examples/sample-datasets.md"
+    },
+    {
+      "source": "src/cn/examples/social-network.md",
+      "target": "docs/zh/examples/social-network.md"
+    },
+    {
+      "source": "src/cn/get-data/connect-sources.md",
+      "target": "docs/zh/get-data/connect-sources.md"
+    },
+    {
+      "source": "src/cn/get-data/data-formats.md",
+      "target": "docs/zh/get-data/data-formats.md"
+    },
+    {
+      "source": "src/cn/get-data/data-preparation/index.md",
+      "target": "docs/zh/get-data/data-preparation/index.md"
+    },
+    {
+      "source": "src/cn/get-data/index.md",
+      "target": "docs/zh/get-data/index.md"
+    },
+    {
+      "source": "src/cn/get-data/refresh-data.md",
+      "target": "docs/zh/get-data/refresh-data.md"
+    },
+    {
+      "source": "src/cn/getting-started/first-visualization.md",
+      "target": "docs/zh/getting-started/first-visualization.md"
+    },
+    {
+      "source": "src/cn/getting-started/index.md",
+      "target": "docs/zh/getting-started/index.md"
+    },
+    {
+      "source": "src/cn/getting-started/sign-up.md",
+      "target": "docs/zh/getting-started/sign-up.md"
+    },
+    {
+      "source": "src/cn/getting-started/tour-interface.md",
+      "target": "docs/zh/getting-started/tour-interface.md"
+    },
+    {
+      "source": "src/cn/index.md",
+      "target": "docs/zh/index.md"
+    },
+    {
+      "source": "src/cn/reference/data-limits.md",
+      "target": "docs/zh/reference/data-limits.md"
+    },
+    {
+      "source": "src/cn/reference/faq.md",
+      "target": "docs/zh/reference/faq.md"
+    },
+    {
+      "source": "src/cn/reference/index.md",
+      "target": "docs/zh/reference/index.md"
+    },
+    {
+      "source": "src/cn/reference/keyboard-shortcuts.md",
+      "target": "docs/zh/reference/keyboard-shortcuts.md"
+    },
+    {
+      "source": "src/cn/reference/supported-languages.md",
+      "target": "docs/zh/reference/supported-languages.md"
+    },
+    {
+      "source": "src/cn/share-collaborate/collaborate-real-time.md",
+      "target": "docs/zh/share-collaborate/collaborate-real-time.md"
+    },
+    {
+      "source": "src/cn/share-collaborate/comments-feedback.md",
+      "target": "docs/zh/share-collaborate/comments-feedback.md"
+    },
+    {
+      "source": "src/cn/share-collaborate/export-options.md",
+      "target": "docs/zh/share-collaborate/export-options.md"
+    },
+    {
+      "source": "src/cn/share-collaborate/index.md",
+      "target": "docs/zh/share-collaborate/index.md"
+    },
+    {
+      "source": "src/cn/share-collaborate/permissions-security.md",
+      "target": "docs/zh/share-collaborate/permissions-security.md"
+    },
+    {
+      "source": "src/cn/share-collaborate/publish-dashboards.md",
+      "target": "docs/zh/share-collaborate/publish-dashboards.md"
+    },
+    {
+      "source": "src/cn/share-collaborate/share-reports.md",
+      "target": "docs/zh/share-collaborate/share-reports.md"
+    },
+    {
+      "source": "src/cn/training/index.md",
+      "target": "docs/zh/training/index.md"
+    },
+    {
+      "source": "src/cn/training/learning-paths.md",
+      "target": "docs/zh/training/learning-paths.md"
+    },
+    {
+      "source": "src/cn/training/video-tutorials.md",
+      "target": "docs/zh/training/video-tutorials.md"
+    },
+    {
+      "source": "src/cn/what-s-new/index.md",
+      "target": "docs/zh/what-s-new/index.md"
+    },
+    {
+      "source": "src/fr/analyze-data/drill-down.md",
+      "target": "docs/fr/analyze-data/drill-down.md"
+    },
+    {
+      "source": "src/fr/analyze-data/filter-sort.md",
+      "target": "docs/fr/analyze-data/filter-sort.md"
+    },
+    {
+      "source": "src/fr/analyze-data/index.md",
+      "target": "docs/fr/analyze-data/index.md"
+    },
+    {
+      "source": "src/fr/analyze-data/pattern-discovery.md",
+      "target": "docs/fr/analyze-data/pattern-discovery.md"
+    },
+    {
+      "source": "src/fr/analyze-data/trend-analysis.md",
+      "target": "docs/fr/analyze-data/trend-analysis.md"
+    },
+    {
+      "source": "src/fr/create-visualizations/best-practices.md",
+      "target": "docs/fr/create-visualizations/best-practices.md"
+    },
+    {
+      "source": "src/fr/create-visualizations/build-dashboard.md",
+      "target": "docs/fr/create-visualizations/build-dashboard.md"
+    },
+    {
+      "source": "src/fr/create-visualizations/index.md",
+      "target": "docs/fr/create-visualizations/index.md"
+    },
+    {
+      "source": "src/fr/customize/colors-styles.md",
+      "target": "docs/fr/customize/colors-styles.md"
+    },
+    {
+      "source": "src/fr/customize/format-visuals.md",
+      "target": "docs/fr/customize/format-visuals.md"
+    },
+    {
+      "source": "src/fr/customize/index.md",
+      "target": "docs/fr/customize/index.md"
+    },
+    {
+      "source": "src/fr/customize/labels-tooltips.md",
+      "target": "docs/fr/customize/labels-tooltips.md"
+    },
+    {
+      "source": "src/fr/customize/layouts.md",
+      "target": "docs/fr/customize/layouts.md"
+    },
+    {
+      "source": "src/fr/customize/themes.md",
+      "target": "docs/fr/customize/themes.md"
+    },
+    {
+      "source": "src/fr/examples/customer-analytics.md",
+      "target": "docs/fr/examples/customer-analytics.md"
+    },
+    {
+      "source": "src/fr/examples/index.md",
+      "target": "docs/fr/examples/index.md"
+    },
+    {
+      "source": "src/fr/examples/project-management.md",
+      "target": "docs/fr/examples/project-management.md"
+    },
+    {
+      "source": "src/fr/examples/sales-dashboard.md",
+      "target": "docs/fr/examples/sales-dashboard.md"
+    },
+    {
+      "source": "src/fr/examples/sample-datasets.md",
+      "target": "docs/fr/examples/sample-datasets.md"
+    },
+    {
+      "source": "src/fr/examples/social-network.md",
+      "target": "docs/fr/examples/social-network.md"
+    },
+    {
+      "source": "src/fr/get-data/connect-sources.md",
+      "target": "docs/fr/get-data/connect-sources.md"
+    },
+    {
+      "source": "src/fr/get-data/data-formats.md",
+      "target": "docs/fr/get-data/data-formats.md"
+    },
+    {
+      "source": "src/fr/get-data/data-preparation/index.md",
+      "target": "docs/fr/get-data/data-preparation/index.md"
+    },
+    {
+      "source": "src/fr/get-data/index.md",
+      "target": "docs/fr/get-data/index.md"
+    },
+    {
+      "source": "src/fr/get-data/refresh-data.md",
+      "target": "docs/fr/get-data/refresh-data.md"
+    },
+    {
+      "source": "src/fr/getting-started/first-visualization.md",
+      "target": "docs/fr/getting-started/first-visualization.md"
+    },
+    {
+      "source": "src/fr/getting-started/index.md",
+      "target": "docs/fr/getting-started/index.md"
+    },
+    {
+      "source": "src/fr/getting-started/sign-up.md",
+      "target": "docs/fr/getting-started/sign-up.md"
+    },
+    {
+      "source": "src/fr/getting-started/tour-interface.md",
+      "target": "docs/fr/getting-started/tour-interface.md"
+    },
+    {
+      "source": "src/fr/index.md",
+      "target": "docs/fr/index.md"
+    },
+    {
+      "source": "src/fr/reference/data-limits.md",
+      "target": "docs/fr/reference/data-limits.md"
+    },
+    {
+      "source": "src/fr/reference/faq.md",
+      "target": "docs/fr/reference/faq.md"
+    },
+    {
+      "source": "src/fr/reference/index.md",
+      "target": "docs/fr/reference/index.md"
+    },
+    {
+      "source": "src/fr/reference/keyboard-shortcuts.md",
+      "target": "docs/fr/reference/keyboard-shortcuts.md"
+    },
+    {
+      "source": "src/fr/reference/supported-languages.md",
+      "target": "docs/fr/reference/supported-languages.md"
+    },
+    {
+      "source": "src/fr/share-collaborate/collaborate-real-time.md",
+      "target": "docs/fr/share-collaborate/collaborate-real-time.md"
+    },
+    {
+      "source": "src/fr/share-collaborate/comments-feedback.md",
+      "target": "docs/fr/share-collaborate/comments-feedback.md"
+    },
+    {
+      "source": "src/fr/share-collaborate/export-options.md",
+      "target": "docs/fr/share-collaborate/export-options.md"
+    },
+    {
+      "source": "src/fr/share-collaborate/index.md",
+      "target": "docs/fr/share-collaborate/index.md"
+    },
+    {
+      "source": "src/fr/share-collaborate/permissions-security.md",
+      "target": "docs/fr/share-collaborate/permissions-security.md"
+    },
+    {
+      "source": "src/fr/share-collaborate/publish-dashboards.md",
+      "target": "docs/fr/share-collaborate/publish-dashboards.md"
+    },
+    {
+      "source": "src/fr/share-collaborate/share-reports.md",
+      "target": "docs/fr/share-collaborate/share-reports.md"
+    },
+    {
+      "source": "src/fr/training/index.md",
+      "target": "docs/fr/training/index.md"
+    },
+    {
+      "source": "src/fr/training/learning-paths.md",
+      "target": "docs/fr/training/learning-paths.md"
+    },
+    {
+      "source": "src/fr/training/video-tutorials.md",
+      "target": "docs/fr/training/video-tutorials.md"
+    },
+    {
+      "source": "src/fr/what-s-new/index.md",
+      "target": "docs/fr/what-s-new/index.md"
+    },
+    {
+      "source": "src/es/analyze-data/drill-down.md",
+      "target": "docs/es/analyze-data/drill-down.md"
+    },
+    {
+      "source": "src/es/analyze-data/filter-sort.md",
+      "target": "docs/es/analyze-data/filter-sort.md"
+    },
+    {
+      "source": "src/es/analyze-data/index.md",
+      "target": "docs/es/analyze-data/index.md"
+    },
+    {
+      "source": "src/es/analyze-data/pattern-discovery.md",
+      "target": "docs/es/analyze-data/pattern-discovery.md"
+    },
+    {
+      "source": "src/es/analyze-data/trend-analysis.md",
+      "target": "docs/es/analyze-data/trend-analysis.md"
+    },
+    {
+      "source": "src/es/create-visualizations/best-practices.md",
+      "target": "docs/es/create-visualizations/best-practices.md"
+    },
+    {
+      "source": "src/es/create-visualizations/build-dashboard.md",
+      "target": "docs/es/create-visualizations/build-dashboard.md"
+    },
+    {
+      "source": "src/es/create-visualizations/index.md",
+      "target": "docs/es/create-visualizations/index.md"
+    },
+    {
+      "source": "src/es/customize/colors-styles.md",
+      "target": "docs/es/customize/colors-styles.md"
+    },
+    {
+      "source": "src/es/customize/format-visuals.md",
+      "target": "docs/es/customize/format-visuals.md"
+    },
+    {
+      "source": "src/es/customize/index.md",
+      "target": "docs/es/customize/index.md"
+    },
+    {
+      "source": "src/es/customize/labels-tooltips.md",
+      "target": "docs/es/customize/labels-tooltips.md"
+    },
+    {
+      "source": "src/es/customize/layouts.md",
+      "target": "docs/es/customize/layouts.md"
+    },
+    {
+      "source": "src/es/customize/themes.md",
+      "target": "docs/es/customize/themes.md"
+    },
+    {
+      "source": "src/es/examples/customer-analytics.md",
+      "target": "docs/es/examples/customer-analytics.md"
+    },
+    {
+      "source": "src/es/examples/index.md",
+      "target": "docs/es/examples/index.md"
+    },
+    {
+      "source": "src/es/examples/project-management.md",
+      "target": "docs/es/examples/project-management.md"
+    },
+    {
+      "source": "src/es/examples/sales-dashboard.md",
+      "target": "docs/es/examples/sales-dashboard.md"
+    },
+    {
+      "source": "src/es/examples/sample-datasets.md",
+      "target": "docs/es/examples/sample-datasets.md"
+    },
+    {
+      "source": "src/es/examples/social-network.md",
+      "target": "docs/es/examples/social-network.md"
+    },
+    {
+      "source": "src/es/get-data/connect-sources.md",
+      "target": "docs/es/get-data/connect-sources.md"
+    },
+    {
+      "source": "src/es/get-data/data-formats.md",
+      "target": "docs/es/get-data/data-formats.md"
+    },
+    {
+      "source": "src/es/get-data/data-preparation/index.md",
+      "target": "docs/es/get-data/data-preparation/index.md"
+    },
+    {
+      "source": "src/es/get-data/index.md",
+      "target": "docs/es/get-data/index.md"
+    },
+    {
+      "source": "src/es/get-data/refresh-data.md",
+      "target": "docs/es/get-data/refresh-data.md"
+    },
+    {
+      "source": "src/es/getting-started/first-visualization.md",
+      "target": "docs/es/getting-started/first-visualization.md"
+    },
+    {
+      "source": "src/es/getting-started/index.md",
+      "target": "docs/es/getting-started/index.md"
+    },
+    {
+      "source": "src/es/getting-started/sign-up.md",
+      "target": "docs/es/getting-started/sign-up.md"
+    },
+    {
+      "source": "src/es/getting-started/tour-interface.md",
+      "target": "docs/es/getting-started/tour-interface.md"
+    },
+    {
+      "source": "src/es/index.md",
+      "target": "docs/es/index.md"
+    },
+    {
+      "source": "src/es/reference/data-limits.md",
+      "target": "docs/es/reference/data-limits.md"
+    },
+    {
+      "source": "src/es/reference/faq.md",
+      "target": "docs/es/reference/faq.md"
+    },
+    {
+      "source": "src/es/reference/index.md",
+      "target": "docs/es/reference/index.md"
+    },
+    {
+      "source": "src/es/reference/keyboard-shortcuts.md",
+      "target": "docs/es/reference/keyboard-shortcuts.md"
+    },
+    {
+      "source": "src/es/reference/supported-languages.md",
+      "target": "docs/es/reference/supported-languages.md"
+    },
+    {
+      "source": "src/es/share-collaborate/collaborate-real-time.md",
+      "target": "docs/es/share-collaborate/collaborate-real-time.md"
+    },
+    {
+      "source": "src/es/share-collaborate/comments-feedback.md",
+      "target": "docs/es/share-collaborate/comments-feedback.md"
+    },
+    {
+      "source": "src/es/share-collaborate/export-options.md",
+      "target": "docs/es/share-collaborate/export-options.md"
+    },
+    {
+      "source": "src/es/share-collaborate/index.md",
+      "target": "docs/es/share-collaborate/index.md"
+    },
+    {
+      "source": "src/es/share-collaborate/permissions-security.md",
+      "target": "docs/es/share-collaborate/permissions-security.md"
+    },
+    {
+      "source": "src/es/share-collaborate/publish-dashboards.md",
+      "target": "docs/es/share-collaborate/publish-dashboards.md"
+    },
+    {
+      "source": "src/es/share-collaborate/share-reports.md",
+      "target": "docs/es/share-collaborate/share-reports.md"
+    },
+    {
+      "source": "src/es/training/index.md",
+      "target": "docs/es/training/index.md"
+    },
+    {
+      "source": "src/es/training/learning-paths.md",
+      "target": "docs/es/training/learning-paths.md"
+    },
+    {
+      "source": "src/es/training/video-tutorials.md",
+      "target": "docs/es/training/video-tutorials.md"
+    },
+    {
+      "source": "src/es/what-s-new/index.md",
+      "target": "docs/es/what-s-new/index.md"
+    },
+    {
+      "source": "src/ja/analyze-data/drill-down.md",
+      "target": "docs/ja/analyze-data/drill-down.md"
+    },
+    {
+      "source": "src/ja/analyze-data/filter-sort.md",
+      "target": "docs/ja/analyze-data/filter-sort.md"
+    },
+    {
+      "source": "src/ja/analyze-data/index.md",
+      "target": "docs/ja/analyze-data/index.md"
+    },
+    {
+      "source": "src/ja/analyze-data/pattern-discovery.md",
+      "target": "docs/ja/analyze-data/pattern-discovery.md"
+    },
+    {
+      "source": "src/ja/analyze-data/trend-analysis.md",
+      "target": "docs/ja/analyze-data/trend-analysis.md"
+    },
+    {
+      "source": "src/ja/create-visualizations/best-practices.md",
+      "target": "docs/ja/create-visualizations/best-practices.md"
+    },
+    {
+      "source": "src/ja/create-visualizations/build-dashboard.md",
+      "target": "docs/ja/create-visualizations/build-dashboard.md"
+    },
+    {
+      "source": "src/ja/create-visualizations/index.md",
+      "target": "docs/ja/create-visualizations/index.md"
+    },
+    {
+      "source": "src/ja/customize/colors-styles.md",
+      "target": "docs/ja/customize/colors-styles.md"
+    },
+    {
+      "source": "src/ja/customize/format-visuals.md",
+      "target": "docs/ja/customize/format-visuals.md"
+    },
+    {
+      "source": "src/ja/customize/index.md",
+      "target": "docs/ja/customize/index.md"
+    },
+    {
+      "source": "src/ja/customize/labels-tooltips.md",
+      "target": "docs/ja/customize/labels-tooltips.md"
+    },
+    {
+      "source": "src/ja/customize/layouts.md",
+      "target": "docs/ja/customize/layouts.md"
+    },
+    {
+      "source": "src/ja/customize/themes.md",
+      "target": "docs/ja/customize/themes.md"
+    },
+    {
+      "source": "src/ja/examples/customer-analytics.md",
+      "target": "docs/ja/examples/customer-analytics.md"
+    },
+    {
+      "source": "src/ja/examples/index.md",
+      "target": "docs/ja/examples/index.md"
+    },
+    {
+      "source": "src/ja/examples/project-management.md",
+      "target": "docs/ja/examples/project-management.md"
+    },
+    {
+      "source": "src/ja/examples/sales-dashboard.md",
+      "target": "docs/ja/examples/sales-dashboard.md"
+    },
+    {
+      "source": "src/ja/examples/sample-datasets.md",
+      "target": "docs/ja/examples/sample-datasets.md"
+    },
+    {
+      "source": "src/ja/examples/social-network.md",
+      "target": "docs/ja/examples/social-network.md"
+    },
+    {
+      "source": "src/ja/get-data/connect-sources.md",
+      "target": "docs/ja/get-data/connect-sources.md"
+    },
+    {
+      "source": "src/ja/get-data/data-formats.md",
+      "target": "docs/ja/get-data/data-formats.md"
+    },
+    {
+      "source": "src/ja/get-data/data-preparation/index.md",
+      "target": "docs/ja/get-data/data-preparation/index.md"
+    },
+    {
+      "source": "src/ja/get-data/index.md",
+      "target": "docs/ja/get-data/index.md"
+    },
+    {
+      "source": "src/ja/get-data/refresh-data.md",
+      "target": "docs/ja/get-data/refresh-data.md"
+    },
+    {
+      "source": "src/ja/getting-started/first-visualization.md",
+      "target": "docs/ja/getting-started/first-visualization.md"
+    },
+    {
+      "source": "src/ja/getting-started/index.md",
+      "target": "docs/ja/getting-started/index.md"
+    },
+    {
+      "source": "src/ja/getting-started/sign-up.md",
+      "target": "docs/ja/getting-started/sign-up.md"
+    },
+    {
+      "source": "src/ja/getting-started/tour-interface.md",
+      "target": "docs/ja/getting-started/tour-interface.md"
+    },
+    {
+      "source": "src/ja/index.md",
+      "target": "docs/ja/index.md"
+    },
+    {
+      "source": "src/ja/reference/data-limits.md",
+      "target": "docs/ja/reference/data-limits.md"
+    },
+    {
+      "source": "src/ja/reference/faq.md",
+      "target": "docs/ja/reference/faq.md"
+    },
+    {
+      "source": "src/ja/reference/index.md",
+      "target": "docs/ja/reference/index.md"
+    },
+    {
+      "source": "src/ja/reference/keyboard-shortcuts.md",
+      "target": "docs/ja/reference/keyboard-shortcuts.md"
+    },
+    {
+      "source": "src/ja/reference/supported-languages.md",
+      "target": "docs/ja/reference/supported-languages.md"
+    },
+    {
+      "source": "src/ja/share-collaborate/collaborate-real-time.md",
+      "target": "docs/ja/share-collaborate/collaborate-real-time.md"
+    },
+    {
+      "source": "src/ja/share-collaborate/comments-feedback.md",
+      "target": "docs/ja/share-collaborate/comments-feedback.md"
+    },
+    {
+      "source": "src/ja/share-collaborate/export-options.md",
+      "target": "docs/ja/share-collaborate/export-options.md"
+    },
+    {
+      "source": "src/ja/share-collaborate/index.md",
+      "target": "docs/ja/share-collaborate/index.md"
+    },
+    {
+      "source": "src/ja/share-collaborate/permissions-security.md",
+      "target": "docs/ja/share-collaborate/permissions-security.md"
+    },
+    {
+      "source": "src/ja/share-collaborate/publish-dashboards.md",
+      "target": "docs/ja/share-collaborate/publish-dashboards.md"
+    },
+    {
+      "source": "src/ja/share-collaborate/share-reports.md",
+      "target": "docs/ja/share-collaborate/share-reports.md"
+    },
+    {
+      "source": "src/ja/training/index.md",
+      "target": "docs/ja/training/index.md"
+    },
+    {
+      "source": "src/ja/training/learning-paths.md",
+      "target": "docs/ja/training/learning-paths.md"
+    },
+    {
+      "source": "src/ja/training/video-tutorials.md",
+      "target": "docs/ja/training/video-tutorials.md"
+    },
+    {
+      "source": "src/ja/what-s-new/index.md",
+      "target": "docs/ja/what-s-new/index.md"
+    }
+  ]
+}
