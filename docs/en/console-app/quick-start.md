@@ -29,7 +29,7 @@ Select the local workspace. It does not require an account, and it does not send
 ## 4. Parse it locally
 
 1. Select the imported file.
-2. Start the local parse action in the workspace. Local parsing uses the built-in in-process parser; it does not start a model or a remote service.
+2. Start the parse from the workspace composer (**Start Task**). Local parsing uses the built-in in-process parser; it does not start a model or a remote service.
 3. Wait for the parse phases to finish. A started task is not a finished task.
 4. Open the result and compare several fields or lines with the original file.
 
