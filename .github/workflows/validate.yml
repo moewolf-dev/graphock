@@ -18,6 +18,10 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run validate
+      # Tooling and docs contracts (static Markdown boundary, release-note
+      # notification, Console App page/placeholder status) are only useful if CI
+      # runs them; validate alone does not execute the test scripts.
+      - run: npm test
 
   notify_website:
     if: github.event_name == 'push' && github.repository == 'moewolf-dev/graphock' && github.ref == 'refs/heads/main'
