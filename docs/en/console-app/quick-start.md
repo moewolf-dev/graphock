@@ -1,5 +1,5 @@
 ---
-documentation_status: current
+documentation_status: draft
 reviewed_at: 2026-10-24
 ---
 
@@ -7,13 +7,14 @@ reviewed_at: 2026-10-24
 
 Use a small, non-sensitive file whose content you can check by hand. That makes it easy to tell an import problem from a parsing problem.
 
-## 1. Choose your appearance
+## 1. Complete initial setup
 
-On first launch, the setup wizard asks for a workspace mode and offers theme, rendering and language settings.
+On first launch, an **Initial Setup** card outlines the path: a data directory for Graphock, optional sign-in, and importing a first file. It does not contain theme, rendering or language controls.
+
+After setup, open **Settings → General** for those options:
 
 - Theme: light, dark or system.
 - Rendering: **basic** is always available. **Blur** and **glass** use the galaxy backdrop and are offered only on a capable Mac; the selection falls back to basic when capability is unknown. **Glass** is a manual choice.
-- You can change all of these later in **Settings → General**.
 
 ## 2. Open a local workspace
 

@@ -32,8 +32,15 @@ for (const slug of pages) {
     continue
   }
   const content = readFileSync(file, 'utf8')
-  if (!/^---\n(?:[\s\S]*?\n)?documentation_status: current\n/.test(content)) {
-    errors.push(`${slug}.md: missing documentation_status: current`)
+  // Draft until the product and code owners review each page. A page may only
+  // become `current` once its steps are checked against the real UI and no
+  // unreleased capability is still described as "coming soon".
+  const status = content.match(/^documentation_status: (\w+)$/m)?.[1]
+  if (status !== 'draft' && status !== 'current') {
+    errors.push(`${slug}.md: missing documentation_status (draft or current)`)
+  }
+  if (status === 'current' && /\bcoming soon\b/i.test(content)) {
+    errors.push(`${slug}.md: a current page still contains a coming-soon claim`)
   }
   if (!/^reviewed_at: \d{4}-\d{2}-\d{2}$/m.test(content)) {
     errors.push(`${slug}.md: missing reviewed_at date`)

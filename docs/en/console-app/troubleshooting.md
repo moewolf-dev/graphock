@@ -1,5 +1,5 @@
 ---
-documentation_status: current
+documentation_status: draft
 reviewed_at: 2026-10-24
 ---
 
@@ -21,7 +21,7 @@ Start with the exact message. Graphock reports a reason instead of silently cont
 - **File rejected as unsupported.** The format is outside the built-in parser or the configured service. Check [formats and limits](./formats-limits.md); renaming the extension does not help.
 - **File blocked as unreadable.** macOS denied access, the file disappeared, or it is not a regular file. Re-import with a narrower folder permission.
 - **File blocked as too large.** Local parsing stops at 128 MiB per file. Split the file or configure a streaming-capable service.
-- **Nothing happens after starting a task.** Watch the parse phases. If the engine cannot start, check **Settings → Sidecars** / the local runtime status and retry. A task that stays queued is not a completed task.
+- **Nothing happens after starting a task.** Watch the parse phases. If the engine cannot start, check the **Sidecars** page and the local runtime status, then retry. A task that stays queued is not a completed task.
 - **Result looks wrong.** Compare a sample of fields with the source file. A file in **Files** is not proof that a provider accepted it for that task.
 
 ## Sign-in

@@ -1,5 +1,5 @@
 ---
-documentation_status: current
+documentation_status: draft
 reviewed_at: 2026-10-24
 ---
 
@@ -15,7 +15,7 @@ Graphock is free to download and use for local work. Pro is a single one-time pu
 | Files, workspace and local settings | Included | Included |
 | Cloud parsing | With a signed-in account, within the monthly allowance | Same allowance; Pro does not remove it |
 | Tasks page, Templates, Graph, File Galaxy, Reports | Not included | Included |
-| Community templates download | Not included | Included |
+| Community templates download | Not included | Included (sign-in required) |
 | Price | Free | Shown at checkout when purchasing is available |
 
 Pro requires a Graphock account because the entitlement is verified per account. Pro does not include unlimited cloud processing, priority queueing or additional storage.
