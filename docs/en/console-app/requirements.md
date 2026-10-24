@@ -1,6 +1,5 @@
 ---
 documentation_status: draft
-reviewed_at: 2026-10-24
 ---
 
 # Requirements

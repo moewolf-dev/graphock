@@ -42,8 +42,13 @@ for (const slug of pages) {
   if (status === 'current' && /\bcoming soon\b/i.test(content)) {
     errors.push(`${slug}.md: a current page still contains a coming-soon claim`)
   }
-  if (!/^reviewed_at: \d{4}-\d{2}-\d{2}$/m.test(content)) {
-    errors.push(`${slug}.md: missing reviewed_at date`)
+  // reviewed_at records an owner review, not the authoring date. Drafts must
+  // not carry a date that could be mistaken for sign-off.
+  if (status === 'current' && !/^reviewed_at: \d{4}-\d{2}-\d{2}$/m.test(content)) {
+    errors.push(`${slug}.md: a current page needs a reviewed_at date`)
+  }
+  if (status === 'draft' && /^reviewed_at:/m.test(content)) {
+    errors.push(`${slug}.md: a draft must not claim a reviewed_at date`)
   }
   if (slug !== 'index' && !read('docs/en/console-app/index.md').includes(`./${slug}.md`)) {
     errors.push(`index.md does not link to ${slug}.md`)
