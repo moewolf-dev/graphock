@@ -35,7 +35,7 @@ An invalid or expired sign-in link is reported on the page. The page never falls
 
 - **No browser opens:** check the default browser and any URL-scheme blocking policy.
 - **Wrong account:** sign out in the app and sign in again. Account deletion requires the same account that started the request.
-- **Pro still denied after logging in:** open **Settings → Account** and check the entitlement status. If it shows *not verified*, reload access. Purchases must be associated with the same Graphock account.
+- **Pro still denied after logging in:** open **Settings → General → Account** and check the entitlement source. Entitlement is re-checked when the session changes, so sign out and in again if it is stale. Purchases must be associated with the same Graphock account.
 - **Cloud quota denied:** the monthly allowance is exhausted or reserved. Wait for the UTC month to roll over or check the allowance shown in the app.
 
 See [troubleshooting](./troubleshooting.md) for error messages outside sign-in.
