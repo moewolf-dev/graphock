@@ -1,7 +1,7 @@
-# 最新更新
+---
+translation_status: missing
+---
 
-了解最新功能和更新。
+# Graphock documentation
 
-## 概述
-
-即将推出 - 了解最新功能和更新。
+Translation is pending after the product documentation correction. Read the [current English source](../../en/what-s-new/index.md).

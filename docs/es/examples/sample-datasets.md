@@ -1,3 +1,7 @@
-# Sample Datasets
+---
+translation_status: missing
+---
 
-Coming soon - Download sample datasets to practice with.
+# Graphock documentation
+
+Translation is pending after the product documentation correction. Read the [current English source](../../en/examples/sample-datasets.md).

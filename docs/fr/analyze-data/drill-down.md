@@ -1,3 +1,7 @@
-# Drill Down
+---
+translation_status: missing
+---
 
-Coming soon - Drill down into your data for deeper insights.
+# Graphock documentation
+
+Translation is pending after the product documentation correction. Read the [current English source](../../en/analyze-data/drill-down.md).

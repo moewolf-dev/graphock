@@ -1,3 +1,4 @@
+import { assertStaticMarkdown } from './static-markdown.mjs'
 import { lstatSync, readFileSync, readdirSync, statSync } from 'node:fs'
 import { extname, join, relative, resolve } from 'node:path'
 
@@ -45,10 +46,8 @@ function walk(directory) {
     }
     if (extension === '.md') {
       markdownCount += 1
-      const content = stat.size < 1_000_000 ? readFileSync(fullPath, 'utf8') : ''
-      if (/<\s*(script|iframe|object|embed)\b/i.test(content)) {
-        errors.push(`${rel}: executable or embedded HTML is not allowed`)
-      }
+      const content = readFileSync(fullPath, 'utf8')
+      try { assertStaticMarkdown(content, rel) } catch (error) { errors.push(error.message) }
       if (content.includes('\r')) errors.push(`${rel}: use LF line endings`)
     }
     if (extension === '.svg' && stat.size < 1_000_000) {

@@ -1,3 +1,23 @@
-# Get Data
+---
+documentation_status: current
+reviewed_at: 2026-10-15
+---
 
-Coming soon - Connect to your data sources and prepare data for analysis.
+# 配置处理服务
+
+在桌面设置的服务商区域配置模型和处理服务。服务配置与导入输入文件是不同步骤。
+
+| 已注册适配器 | 配置边界 |
+| --- | --- |
+| OpenAI-compatible API | 需要兼容端点、支持的模型和凭据；不代表认证了全部服务商或模型。 |
+| Ollama | 需要运行中的本地服务和已安装模型。 |
+| Ollama Vision | 需要支持视觉的本地模型与适配器接受的图像。 |
+| Z.AI GLM-OCR | 需要受支持的服务端点、模型和凭据。 |
+| Alibaba Qwen OCR | 需要受支持的服务端点、模型和凭据。 |
+| Hugging Face image-to-text | 实验性视觉/图像转文字适配器，并非注册的 OCR 适配器。需要兼容的端点和模型，先用小任务核对输出。 |
+
+设置对应的端点、模型和凭据。先用小任务验证，再扩大批量。注册表中存在服务不保证账号有访问权限。
+
+本地服务需要运行环境；远程服务适用其费用、用量和数据政策。云能力由工作区配置和账号权限决定。此清单不包含 Azure、Google Cloud、AWS 或 Unstructured 专用文档连接器。
+
+不要把凭据写进提示词、截图或公开支持报告。

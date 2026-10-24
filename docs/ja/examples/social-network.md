@@ -1,3 +1,7 @@
-# Social Network
+---
+translation_status: missing
+---
 
-Coming soon - Example of a social network visualization.
+# Graphock documentation
+
+Translation is pending after the product documentation correction. Read the [current English source](../../en/examples/social-network.md).

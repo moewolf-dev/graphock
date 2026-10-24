@@ -1,3 +1,7 @@
-# Get Data
+---
+translation_status: missing
+---
 
-Coming soon - Connect to your data sources and prepare data for analysis.
+# Configure processing services
+
+Translation is pending after the product documentation correction. Read the [current English source](../../en/get-data/connect-sources.md).

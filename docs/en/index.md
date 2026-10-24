@@ -1,96 +1,24 @@
 ---
-layout: home
-
-hero:
-  name: "Graphock"
-  text: "Data Visualization Made Simple"
-  tagline: Transform your data into insights in minutes, not hours
-  actions:
-    - theme: brand
-      text: Get Started
-      link: /getting-started/
-    - theme: alt
-      text: Explore Charts
-      link: /create-visualizations/
-
-features:
-  - title: "📊 Visualize Any Data"
-    details: "Import data from spreadsheets, databases, or APIs. Create stunning charts and graphs with a few clicks."
-  - title: "🔍 Deep Analytics"
-    details: "Explore trends, patterns, and insights in your data with interactive filtering, sorting, and drill-down capabilities."
-  - title: "🎨 Customize Everything"
-    details: "Style your visualizations with custom colors, labels, tooltips, and layouts that match your brand."
-  - title: "🚀 Fast & Powerful"
-    details: "Handle large datasets smoothly with GPU-accelerated rendering powered by WebGPU."
-  - title: "👥 Collaborate Seamlessly"
-    details: "Share dashboards with your team, collaborate in real-time, and export in multiple formats."
-  - title: "📱 Any Device"
-    details: "Access your visualizations anywhere with our web application and desktop app."
-
+documentation_status: current
+reviewed_at: 2026-10-14
 ---
 
-## What is Graphock?
+# Graphock documentation
 
-Graphock is an intuitive data visualization platform designed for business analysts, researchers, and anyone who needs to transform data into actionable insights.
+Graphock is a desktop workspace for importing files, configuring processing tasks, and exploring relationships between inputs and generated results. The website provides downloads and information; it is not the desktop file-processing workspace.
 
-No coding required. Just import your data and start creating.
+## Start with the desktop workflow
 
-## Why Choose Graphock?
+1. [Install and sign in](./getting-started/sign-up.md).
+2. [Learn the workspace](./getting-started/tour-interface.md).
+3. [Import a small set of files](./get-data/index.md).
+4. [Configure a processing service](./get-data/connect-sources.md).
+5. [Inspect a result and its relationships](./getting-started/first-visualization.md).
 
-### For Business Analysts
+## Current scope
 
-- Create professional dashboards without technical expertise
-- Connect to multiple data sources effortlessly
-- Share insights with stakeholders instantly
+The desktop app separates local and cloud workspaces. Available processing depends on the chosen runtime, configured adapters and account access. Local services need a running local runtime; remote providers have their own usage charges and data policies. A local workspace does not automatically make every configured provider local.
 
-### For Researchers
+Graphock includes task relationships, structured-data graph analysis and File Galaxy. Imported material and generated outputs have different roles: review source content before relying on an extracted claim.
 
-- Visualize complex relationships and patterns
-- Perform advanced statistical analyses
-- Export high-quality visuals for publications
-
-### For Everyone
-
-- Learn the basics in minutes
-- Unlock advanced features as you grow
-- Join a community of data enthusiasts
-
-## Quick Start
-
-1. **[Sign Up](/getting-started/)** - Create your free account
-2. **[Import Data](/get-data/)** - Connect to your data source
-3. **[Create Visualizations](/create-visualizations/)** - Build your first chart
-4. **[Share Insights](/share-collaborate/)** - Publish your dashboard
-
-## Popular Use Cases
-
-- 📈 **Sales Analytics**: Track performance metrics and identify trends
-- 🌐 **Social Networks**: Visualize relationships and connections
-- 🗺️ **Geographic Data**: Create interactive maps with location-based insights
-- 📊 **Financial Reports**: Build comprehensive financial dashboards
-- 🔬 **Research Analysis**: Present complex research data clearly
-
-## Chart Types
-
-Graphock supports a wide variety of visualization types:
-
-- **Bar Charts**: Compare categories and show trends
-- **Line Charts**: Display continuous data over time
-- **Network Graphs**: Visualize relationships and connections
-- **Scatter Plots**: Show correlations between variables
-- **Pie Charts**: Display proportions and percentages
-- **Maps**: Visualize geographic data with interactive maps
-
-## Get Started Today
-
-Ready to transform your data? Start creating stunning visualizations in minutes.
-
-[Get Started Free →](/getting-started/)
-
----
-
-## Need Help?
-
-- 📖 **[Documentation](/)** - Browse our comprehensive guides
-- 💬 **[Community](https://github.com/moewolf-dev/graphock)** - Join our GitHub community
-- 📧 **[Support](mailto:support@graphock.com)** - Contact our support team
+The old chart-builder, dashboard and collaboration documentation has been retired from this guide. Those historical URLs remain available with explicit status notices, rather than instructions for controls that have not been verified in the current desktop interface.

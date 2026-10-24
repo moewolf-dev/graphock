@@ -1,3 +1,7 @@
-# Share Reports
+---
+translation_status: missing
+---
 
-Coming soon - Share reports with stakeholders.
+# Graphock documentation
+
+Translation is pending after the product documentation correction. Read the [current English source](../../en/share-collaborate/share-reports.md).

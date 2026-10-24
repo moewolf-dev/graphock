@@ -1,3 +1,7 @@
-# Learning Paths
+---
+translation_status: missing
+---
 
-Coming soon - Follow structured learning paths to master Graphock.
+# Graphock documentation
+
+Translation is pending after the product documentation correction. Read the [current English source](../../en/training/learning-paths.md).

@@ -1,3 +1,7 @@
-# Keyboard Shortcuts
+---
+translation_status: missing
+---
 
-Coming soon - Master keyboard shortcuts for faster workflows.
+# Graphock documentation
+
+Translation is pending after the product documentation correction. Read the [current English source](../../en/reference/keyboard-shortcuts.md).

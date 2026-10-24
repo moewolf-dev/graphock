@@ -1,3 +1,7 @@
-# Pattern Discovery
+---
+translation_status: missing
+---
 
-Coming soon - Discover patterns in your data.
+# Graphock documentation
+
+Translation is pending after the product documentation correction. Read the [current English source](../../en/analyze-data/pattern-discovery.md).

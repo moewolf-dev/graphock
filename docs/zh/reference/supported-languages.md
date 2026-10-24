@@ -1,3 +1,7 @@
-# Supported Languages
+---
+translation_status: missing
+---
 
-Coming soon - See which languages Graphock supports.
+# Graphock documentation
+
+Translation is pending after the product documentation correction. Read the [current English source](../../en/reference/supported-languages.md).

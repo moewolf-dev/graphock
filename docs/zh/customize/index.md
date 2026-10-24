@@ -1,3 +1,7 @@
-# Customize
+---
+translation_status: missing
+---
 
-Coming soon - Customize your visualizations with colors, styles, and more.
+# Graphock documentation
+
+Translation is pending after the product documentation correction. Read the [current English source](../../en/customize/index.md).

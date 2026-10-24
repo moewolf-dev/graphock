@@ -1,3 +1,7 @@
-# Best Practices
+---
+translation_status: missing
+---
 
-Coming soon - Learn best practices for creating effective visualizations.
+# Graphock documentation
+
+Translation is pending after the product documentation correction. Read the [current English source](../../en/create-visualizations/best-practices.md).

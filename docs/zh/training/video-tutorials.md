@@ -1,3 +1,7 @@
-# Video Tutorials
+---
+translation_status: missing
+---
 
-Coming soon - Watch video tutorials for step-by-step guidance.
+# Graphock documentation
+
+Translation is pending after the product documentation correction. Read the [current English source](../../en/training/video-tutorials.md).

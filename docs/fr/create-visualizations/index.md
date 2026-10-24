@@ -1,3 +1,7 @@
-# Chart Types
+---
+translation_status: missing
+---
 
-Coming soon - Explore different chart types available in Graphock.
+# Graphock documentation
+
+Translation is pending after the product documentation correction. Read the [current English source](../../en/create-visualizations/index.md).
