@@ -1,0 +1,37 @@
+---
+documentation_status: current
+reviewed_at: 2026-10-24
+---
+
+# Install Graphock
+
+## Direct download
+
+**Status: available when a signed package is listed on the download page.**
+
+1. Open [graphock.com/download](/download) and choose the package for your Mac. Both Apple silicon and Intel packages are offered only when they have been built and signed for release.
+2. Open the `.dmg` and drag **Graphock** to **Applications**, or unzip the `.zip` and move the app yourself.
+3. Start Graphock from Applications. macOS may ask you to confirm that the app was downloaded from the internet.
+4. If macOS reports that the app cannot be verified or is damaged, stop. Do not disable Gatekeeper or remove quarantine flags. Report the exact message to support with your macOS version and the package name.
+
+A package that is not listed on the download page has not been published. Do not install a build from an unofficial mirror.
+
+## Mac App Store
+
+**Status: coming soon.** The Mac App Store build is not published. When it is available, purchase and installation will go through the App Store, and the App Store will own updates.
+
+## Installing both builds
+
+The Direct and Mac App Store builds can be installed side by side. After signing in with the same Graphock account, Pro and the cloud allowance are shared. Local app data is separate per build.
+
+## Updates
+
+- **Direct build:** Graphock can check the release catalog and tell you when a newer Direct version exists. Installation is a manual download; there is no silent self-update.
+- **Mac App Store build:** updates are delivered by the App Store. The Direct catalog is not queried.
+
+## Uninstall
+
+1. Quit Graphock.
+2. Move Graphock from Applications to the Trash.
+3. Optionally remove the app's local data from `~/Library/Application Support/Graphock`. This removes local workspaces, task records and cached credentials from the device; it does not delete your Graphock account or cloud data.
+4. To delete the account itself, use [account deletion](./account-deletion.md). Uninstalling is not a deletion request.

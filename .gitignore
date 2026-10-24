@@ -7,3 +7,6 @@ node_modules/
 dist/
 tmp/
 *.log
+
+# Local agent workspace (does not belong to the public repo)
+.opencode/

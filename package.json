@@ -6,8 +6,9 @@
   "description": "Public Graphock repository validation tooling",
   "scripts": {
     "validate": "node scripts/verify-schema-lock.mjs && node scripts/validate-community-templates.mjs && node scripts/validate-public-docs.mjs && node scripts/validate-markdown-links.mjs && node scripts/validate-no-secrets.mjs",
-    "test": "node scripts/test-community-template-tooling.mjs && node scripts/test-public-content-tooling.mjs && node scripts/test-website-sync-notification.mjs && npm run test:static-markdown",
-    "test:static-markdown": "node scripts/test-static-markdown.mjs"
+    "test": "node scripts/test-community-template-tooling.mjs && node scripts/test-public-content-tooling.mjs && node scripts/test-website-sync-notification.mjs && npm run test:static-markdown && npm run test:console-app-docs",
+    "test:static-markdown": "node scripts/test-static-markdown.mjs",
+    "test:console-app-docs": "node scripts/test-console-app-docs.mjs"
   },
   "devDependencies": {
     "ajv": "^8.20.0",
