@@ -21,7 +21,7 @@ A package that is not listed on the download page has not been published. Do not
 
 ## Installing both builds
 
-The Direct and Mac App Store builds can be installed side by side. After signing in with the same Graphock account, Pro and the cloud allowance are shared. Local app data is separate per build.
+Side-by-side installation and isolation of local data between the Direct and Mac App Store builds have not yet been verified. Do not rely on both builds coexisting until this is confirmed for the released packages. Pro and the cloud allowance are intended to follow the same Graphock account across channels.
 
 ## Updates
 
@@ -32,5 +32,5 @@ The Direct and Mac App Store builds can be installed side by side. After signing
 
 1. Quit Graphock.
 2. Move Graphock from Applications to the Trash.
-3. Optionally remove the app's local data from `~/Library/Application Support/Graphock`. This removes local workspaces, task records and cached credentials from the device; it does not delete your Graphock account or cloud data.
+3. If you choose to remove local app data, first back up any workspaces and task records you need. The location can depend on the build and its sandbox; do not assume removing a single folder clears both builds. Removing local data does not delete your Graphock account or cloud data.
 4. To delete the account itself, use [account deletion](./account-deletion.md). Uninstalling is not a deletion request.

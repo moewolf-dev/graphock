@@ -28,7 +28,7 @@ A signed-in account has a monthly cloud parsing allowance. It is currently 50 ca
 **Status: coming soon.** The one-time purchase is not on sale yet.
 
 - The website will show the price at checkout. This guide does not quote an amount, because a price is only valid once the live checkout and product configuration have been verified.
-- The Mac App Store build will use In-App Purchase. StoreKit purchasing is not available in the current build.
+- The Mac App Store build is intended to use In-App Purchase. Availability depends on the released app and its configured App Store product.
 - A Direct purchase and a Mac App Store purchase must be associated with the same Graphock account to share Pro.
 
 ## Refunds and old subscriptions

@@ -11,7 +11,7 @@ Start with the exact message. Graphock reports a reason instead of silently cont
 | Message | What to do |
 | --- | --- |
 | Sign in to use this feature. | The feature needs a Graphock account. Use [sign-in](./sign-in.md). |
-| Sign in and upgrade to Pro to use this feature. | The account is signed in but has no verified Pro entitlement. Check **Settings → Account**. |
+| Sign in and upgrade to Pro to use this feature. | The account is signed in but has no verified Pro entitlement. Check **Settings → General → Account**. |
 | This build does not include this capability. | The installed build does not contain the required component. Use the published package for your channel; do not patch the app manually. |
 | This month's cloud allowance is used up. | Wait for the next UTC month or use local parsing. The allowance does not carry over. |
 
@@ -36,7 +36,7 @@ Start with the exact message. Graphock reports a reason instead of silently cont
 
 ## Local data
 
-- **I uninstalled but my files are gone / still there.** Uninstalling removes the app, not your original files. Local app data remains under `~/Library/Application Support/Graphock` until you remove it.
+- **I uninstalled but my files are gone / still there.** Uninstalling removes the app, not your original files. Local app data can remain on the device; its location depends on the build and its sandbox. Back up anything you need before removing it.
 - **I lost my local workspace.** Local data is not backed up to Graphock. Restore from your own backup; the service cannot recover it.
 
 ## Before contacting support
