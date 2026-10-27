@@ -15,13 +15,13 @@ documentation_status: draft
 There is no published minimum CPU or memory figure for parsing. Two practical limits apply instead:
 
 - Local parsing is bounded per file: see [formats and limits](./formats-limits.md).
-- The blur and glass rendering modes are optional. On a Mac that reports fewer than 4 CPU cores, less than 8 GB of memory, an unknown capability set or macOS below 13, Graphock starts in the basic rendering mode and leaves the effect off. You can change it in **Settings → General → Rendering**. The basic mode is always available.
+- The blur and glass rendering modes are optional. On a Mac that reports fewer than 4 CPU cores, less than 8 GB of memory, an unknown capability set or macOS below 13, Graphock starts in the basic rendering mode and leaves the effect off. You can change it in **Settings → General** under **Graphics rendering**. The basic mode is always available.
 
 ## Permissions
 
 - **Files and folders:** macOS asks for access when you import outside the app container. Grant the narrowest folder you need. A denied permission blocks the import; it is not reported as an unsupported format.
 - **Local network:** browsing SMB/NAS hosts requires the Local Network permission. Graphock does not scan your network; it connects only to hosts you configure.
-- **Browser return:** sign-in opens your browser and returns through the `graphock://` URL scheme. If the scheme is blocked, the app cannot complete sign-in.
+- **Browser return:** sign-in opens your browser and returns through the app's registered URL scheme (`graphock-direct://` for the Direct build, `graphock://` for the Mac App Store build). If the scheme is blocked, the app cannot complete sign-in.
 
 ## Network and account
 

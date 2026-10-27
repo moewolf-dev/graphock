@@ -16,7 +16,7 @@ Graphock Console is the desktop application. Files, tasks, graph databases and l
 | Cloud parsing | **Requires sign-in** | Monthly allowance, shared across devices |
 | Tasks page, Templates, Graph, File Galaxy, Reports | **Requires Pro** | Pro is a one-time purchase |
 | Buying Pro | **Coming soon** | No price is shown until checkout is live |
-| Mac App Store build | **Coming soon** | StoreKit purchase is not available yet |
+| Mac App Store build | **Coming soon** | Planned; depends on the released app and a configured App Store product |
 | Windows and Linux builds | **Not available** | Packaging placeholders only |
 
 Availability describes what the application checks at runtime. A feature can still be unavailable because of your build, your account or the service you configured.

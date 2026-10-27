@@ -9,8 +9,8 @@ documentation_status: draft
 **Status: available when a signed package is listed on the download page.**
 
 1. Open [graphock.com/download](/download) and choose the package for your Mac. Both Apple silicon and Intel packages are offered only when they have been built and signed for release.
-2. Open the `.dmg` and drag **Graphock** to **Applications**, or unzip the `.zip` and move the app yourself.
-3. Start Graphock from Applications. macOS may ask you to confirm that the app was downloaded from the internet.
+2. Open the `.dmg` and drag **Graphock Direct** to **Applications**, or unzip the `.zip` and move the app yourself. The Mac App Store build is named **Graphock**.
+3. Start the app from Applications. macOS may ask you to confirm that it was downloaded from the internet.
 4. If macOS reports that the app cannot be verified or is damaged, stop. Do not disable Gatekeeper or remove quarantine flags. Report the exact message to support with your macOS version and the package name.
 
 A package that is not listed on the download page has not been published. Do not install a build from an unofficial mirror.
@@ -30,7 +30,7 @@ Side-by-side installation and isolation of local data between the Direct and Mac
 
 ## Uninstall
 
-1. Quit Graphock.
-2. Move Graphock from Applications to the Trash.
+1. Quit the app.
+2. Move **Graphock Direct** (or **Graphock**, for the Mac App Store build) from Applications to the Trash.
 3. If you choose to remove local app data, first back up any workspaces and task records you need. The location can depend on the build and its sandbox; do not assume removing a single folder clears both builds. Removing local data does not delete your Graphock account or cloud data.
 4. To delete the account itself, use [account deletion](./account-deletion.md). Uninstalling is not a deletion request.

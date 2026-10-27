@@ -33,6 +33,8 @@ The Mac App Store build includes only the local parsers listed in its capability
 
 Cloud parsing accepts the formats supported by the selected provider, within that provider's own limits (for example image or PDF byte and page limits). Those limits are shown by the service configuration; Graphock does not raise them.
 
+The app additionally refuses to upload a file larger than 128 MiB, even when the provider would accept it. That cap is separate from the provider limits and is not configurable.
+
 A file appearing in **Files** is not proof that a particular provider accepts it. Check the support decision shown before submitting a task.
 
 ## Encoding and malformed input

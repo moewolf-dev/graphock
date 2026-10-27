@@ -8,7 +8,7 @@ This page lists what the current release does not do. It is intentionally blunt:
 
 ## Distribution
 
-- **Mac App Store build: coming soon.** The build is not published and StoreKit purchasing is not implemented.
+- **Mac App Store build: coming soon.** The build is not published. A StoreKit purchase bridge exists in the code base, but purchasing depends on the released app and an App Store product that has been configured and verified; no product is available today.
 - **One-time Pro purchase: coming soon.** No checkout is live, so this guide quotes no price.
 - **Windows and Linux: not available.** Configuration exists in the source tree, but no package is released.
 - A Direct package is installable only when it appears on the download page. There is no silent auto-update.
