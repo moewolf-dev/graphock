@@ -18,7 +18,10 @@ const pages = [
   'free-pro',
   'account-deletion',
   'troubleshooting',
-  'limitations'
+  'limitations',
+  'files',
+  'tasks',
+  'settings'
 ]
 const locales = ['zh', 'fr', 'es', 'ja']
 

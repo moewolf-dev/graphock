@@ -34,6 +34,12 @@ Availability describes what the application checks at runtime. A feature can sti
 9. [Troubleshoot a failure](./troubleshooting.md).
 10. [Check current limitations](./limitations.md).
 
+## Daily use
+
+- [Import and browse files](./files.md).
+- [Start, follow and cancel tasks](./tasks.md).
+- [Change settings](./settings.md).
+
 ## What the desktop app does not do
 
 - It does not process files on the website. Website pages describe the product; the desktop app performs the work.
