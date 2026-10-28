@@ -40,6 +40,11 @@ Availability describes what the application checks at runtime. A feature can sti
 - [Start, follow and cancel tasks](./tasks.md).
 - [Change settings](./settings.md).
 
+## Graph and AI
+
+- [Read the Graph view and File Galaxy](./graph-and-galaxy.md).
+- [Use providers and local MCP access](./agents-and-mcp.md).
+
 ## What the desktop app does not do
 
 - It does not process files on the website. Website pages describe the product; the desktop app performs the work.

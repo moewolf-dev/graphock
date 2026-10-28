@@ -21,7 +21,9 @@ const pages = [
   'limitations',
   'files',
   'tasks',
-  'settings'
+  'settings',
+  'graph-and-galaxy',
+  'agents-and-mcp'
 ]
 const locales = ['zh', 'fr', 'es', 'ja']
 
