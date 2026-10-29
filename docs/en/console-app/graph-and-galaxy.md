@@ -10,7 +10,7 @@ Graphock has two visual surfaces for work you already did. **Graph** draws the r
 
 - A signed-in Graphock account with a verified Pro entitlement. **Graph** requires `graph.explore` and **File Galaxy** requires `galaxy.explore`; both are Pro features.
 - macOS 13.3 or later for **Graph**, because its database engine is gated on that version. On an older macOS the build reports the capability as unavailable instead of loading the page.
-- A Mac with working graphics acceleration for **File Galaxy**. The scene needs WebGL, and prefers WebGPU when the runtime offers it.
+- A Mac with working graphics acceleration for **File Galaxy**. WebGL is the default; if you choose WebGPU and it cannot initialize, the scene falls back to WebGL.
 - For **Graph → Task Relations**: at least one completed task whose run wrote a relation-graph artifact.
 - For **Graph → Data Analysis**: a workspace and at least one graph database in it. The page picks an open workspace from the list, or creates one when none exists.
 
@@ -117,7 +117,7 @@ Shortcuts are ignored while the focus is in a text field, and while Control, Opt
 
 - **Graph → Task Relations** draws the selected task's relation graph, and its details panel describes the node or edge you clicked.
 - **Graph → Data Analysis** draws the result of the query you executed, with its node and edge counts, or explains why the result is empty.
-- **File Galaxy** draws one scene for the current workspace, and hovering or clicking a star describes that exact file record.
+- **File Galaxy** draws one scene from the local snapshot, and hovering or clicking a star describes that exact file record.
 - Neither page edits your files: a graph or a galaxy view is a read of local records. Removing a record outside these pages changes what they draw.
 
 ## Common errors and limitations
@@ -132,9 +132,10 @@ Shortcuts are ignored while the focus is in a text field, and while Control, Opt
 | `No relation artifact` | The task finished without a relation-graph artifact | Choose another task. Not every task produces relations |
 | The **Graph DB** list is empty, or asks for a workspace | No workspace was available, or the workspace has no graph database yet | Open the workspace first, then use **Import** to create a database |
 | `Truncated` in the query result panel | The database returned fewer rows than the query matched | Narrow the filters or raise the limit, up to 1000 |
-| **Backend** is set to WebGPU but the label stays `(webgl)` | The runtime has no usable WebGPU adapter, so the scene fell back | Nothing to fix. WebGL draws the same scene. This build logs the fallback but does not show a notice |
+| **Backend** is set to WebGPU and a fallback notice appears | WebGPU was unavailable or failed to initialize, so the scene switched to WebGL | Continue with WebGL, or retry WebGPU after checking the graphics environment |
 | `WebGL context lost` overlay | The GPU driver reset the context, for example after sleep or a memory shortage | Wait for the driver to restore the context; the overlay clears itself. Use **Retry** if it stays |
-| The galaxy draws fewer objects than you have files or tasks | A snapshot keeps at most 200 tasks and 5000 files by default, and reports the truncation as a warning that this build does not display | Use **Refresh** after finishing or removing work. The scenario is documented as a limit, not a bug |
+| A task or task-file limit notice appears | The default snapshot limits task clusters to 200 and task input/output files to 5000; imported directory and ungrouped files are handled separately | The scene is partial. Use **Refresh** after the underlying records change; refreshing alone does not raise the limits |
+| A snapshot refresh or incomplete-data notice appears | The last successful scene is being shown after a failed refresh, or some snapshot items could not be read | Choose **Refresh** and investigate persistent problems with support |
 | The scene is slow or the fans spin up | The 3D scene animates continuously while rotation is on | Turn off **Auto Rotate** and **Task Rotate**, or switch the backend |
 | Nothing happens on an arrow key or Enter | The scene or the search list does not have focus | Click the scene, or open **Search** and use its list |
 
@@ -142,9 +143,7 @@ Additional limitations of this build:
 
 - Dragging a star or a cluster is not wired to the scene, so positions cannot be rearranged. Nothing is saved if you expect that.
 - Selecting a cluster shows no details card, only the highlight, because the card is only implemented for files.
-- A WebGPU fallback is not announced in the interface; the backend label next to the selector is the only evidence of which renderer is in use.
 - The graph canvas always uses the D3 renderer here; the WebGL 3D layout is not selectable from this page.
-- Snapshot truncation warnings exist in the data but are not rendered, so a very large workspace looks complete when it is not.
 - The galaxy is a local view. It shows no server-side or cloud-only records that are absent from this Mac's database.
 - Windows and Linux packages are not available, and a Windows build's capability table marks `graph.explore` and `galaxy.explore` unavailable, so both pages are refused there as a missing capability.
 
