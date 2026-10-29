@@ -30,20 +30,27 @@ Availability describes what the application checks at runtime. A feature can sti
 5. [Review supported formats and limits](./formats-limits.md).
 6. [Sign in](./sign-in.md) when you need cloud or Pro features.
 7. [Read what Free and Pro include](./free-pro.md).
-8. [Delete your account](./account-deletion.md) when you need to.
-9. [Troubleshoot a failure](./troubleshooting.md).
-10. [Check current limitations](./limitations.md).
+8. [Buy or restore Pro](./buy-and-restore.md) when it goes on sale.
+9. [Delete your account](./account-deletion.md) when you need to.
+10. [Troubleshoot a failure](./troubleshooting.md).
+11. [Check current limitations](./limitations.md).
 
 ## Daily use
 
 - [Import and browse files](./files.md).
 - [Start, follow and cancel tasks](./tasks.md).
 - [Change settings](./settings.md).
+- [Back up or recover your data](./backup-and-recovery.md).
 
 ## Graph and AI
 
 - [Read the Graph view and File Galaxy](./graph-and-galaxy.md).
 - [Use providers and local MCP access](./agents-and-mcp.md).
+
+## Help
+
+- [Frequently asked questions](./faq.md).
+- [Troubleshooting](./troubleshooting.md) for a specific message.
 
 ## What the desktop app does not do
 

@@ -23,7 +23,10 @@ const pages = [
   'tasks',
   'settings',
   'graph-and-galaxy',
-  'agents-and-mcp'
+  'agents-and-mcp',
+  'buy-and-restore',
+  'backup-and-recovery',
+  'faq'
 ]
 const locales = ['zh', 'fr', 'es', 'ja']
 
