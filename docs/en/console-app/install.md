@@ -11,17 +11,18 @@ documentation_status: draft
 1. Open [graphock.com/download](/download) and choose the package for your Mac. Both Apple silicon and Intel packages are offered only when they have been built and signed for release.
 2. Open the `.dmg` and drag **Graphock Direct** to **Applications**, or unzip the `.zip` and move the app yourself. The Mac App Store build is named **Graphock**.
 3. Start the app from Applications. macOS may ask you to confirm that it was downloaded from the internet.
-4. If macOS reports that the app cannot be verified or is damaged, stop. Do not disable Gatekeeper or remove quarantine flags. Report the exact message to support with your macOS version and the package name.
+4. Sign in with your Graphock account. The Direct build requires an account before the workspace opens; see [Sign in](./sign-in.md).
+5. If macOS reports that the app cannot be verified or is damaged, stop. Do not disable Gatekeeper or remove quarantine flags. Report the exact message to support with your macOS version and the package name.
 
 A package that is not listed on the download page has not been published. Do not install a build from an unofficial mirror.
 
 ## Mac App Store
 
-**Status: coming soon.** The Mac App Store build is not published. When it is available, purchase and installation will go through the App Store, and the App Store will own updates.
+**Status: not published yet.** When it is available, the App Store edition is a one-time paid download that includes every local feature. The purchase and installation go through the App Store, the App Store owns updates, and no Graphock account is needed for local work. Signing in is only required for cloud parsing.
 
 ## Installing both builds
 
-Side-by-side installation and isolation of local data between the Direct and Mac App Store builds have not yet been verified. Do not rely on both builds coexisting until this is confirmed for the released packages. Pro and the cloud allowance are intended to follow the same Graphock account across channels.
+The Direct and Mac App Store builds are separate licences and namespace their local data separately. Do not expect one purchase to unlock the other, and do not assume that removing one build removes the other build's data. Side-by-side installation on the released packages is verified as part of the release checklist before the App Store listing goes live.
 
 ## Updates
 

@@ -11,6 +11,7 @@ const pages = [
   'index',
   'requirements',
   'install',
+  'editions',
   'quick-start',
   'local-free',
   'formats-limits',

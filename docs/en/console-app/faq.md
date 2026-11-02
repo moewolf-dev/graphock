@@ -12,10 +12,10 @@ Short answers to the questions that come up most often. Each answer links to the
 macOS 13.3 or later for the current build. Graph needs the same minimum because its database engine is gated on it. See [Requirements](./requirements.md).
 
 **Do I need an account to use the app?**
-No. Local parsing, files and settings work without signing in. Cloud processing, the Tasks page, Templates, Graph, File Galaxy and Reports need an account, and most of them need Pro. See [Free and Pro](./free-pro.md).
+It depends on the edition. The Mac App Store edition opens into the local workspace without an account; signing in is only needed for cloud parsing. The Direct build requires a Graphock account when it starts, and its Pro features need a Pro entitlement. See [Direct and Mac App Store editions](./editions.md).
 
 **Which files can it read?**
-The supported list and the 128 MiB import limit are on [formats and limits](./formats-limits.md). A blocked file is reported by name; it is never silently skipped or replaced by another parser.
+The local engine reads PDF, Office and OpenDocument files, plus text, CSV/TSV, JSON and HTML source. Apple Vision OCR extracts text from images and pages in English, Chinese, French and Japanese. The full list and the 128 MiB import limit are on [formats and limits](./formats-limits.md). A blocked file is reported by name; it is never silently skipped or replaced by another parser.
 
 ## Daily use
 
@@ -37,16 +37,22 @@ Not necessarily. **Still running (checking… may be stalled)** means no recent 
 ## Account and purchases
 
 **Why can I not buy Pro yet?**
-Purchasing is coming soon: neither the website checkout nor the App Store product is on sale in this build. No price is shown until checkout is live. See [Buying and restoring Pro](./buy-and-restore.md).
+The Direct Pro purchase is coming soon: the website checkout is not on sale in this build, so no price is shown until it is live. The Mac App Store edition is a separate paid app, not a Pro upgrade. See [Buying, restoring and editions](./buy-and-restore.md).
 
 **I paid on the website but the app still says Free.**
-Sign out and back in with the purchasing account, or use **Restore purchases** in the App Store build. Entitlements come from the service, never from a local flag.
+Sign out and back in with the purchasing account in the Direct build. Entitlements come from the service, never from a local flag. The Mac App Store edition has no Pro line and nothing to restore.
 
 **Does Pro raise the cloud allowance?**
-No. The account has 50 cloud calls per UTC month, shared across devices and channels. Pro does not raise it today.
+No. The signed-in account has 50 cloud calls per UTC month, shared across devices that use the same account. Pro does not raise it today.
 
 **Do old subscriptions still work?**
 Graphock no longer sells new subscriptions. Existing subscriptions and orders are not cancelled. Their renewal, payment-failure and cancellation events keep being processed.
+
+**Does a Direct Pro purchase work in the Mac App Store build?**
+No. The two editions are separate licences; buying Pro on the website does not unlock the App Store app, and the App Store purchase does not add Pro to a Graphock account.
+
+**Can I buy Graphock in mainland China?**
+No. Neither the Direct edition nor the Mac App Store edition is sold in mainland China.
 
 ## Data and privacy
 
@@ -60,7 +66,7 @@ Provider records live in the app database; the secret itself is handed to the sy
 Account deletion removes server-side records within the documented retention windows; it does not touch files on your Mac. See [Account deletion](./account-deletion.md).
 
 **Can I use the app on Windows or Linux?**
-Not yet. Only macOS has a released package; Windows and Linux builds are not available. See [Known limitations](./limitations.md).
+Only the Direct edition has a Windows build, and it is not released yet. Linux has no build. The Mac App Store edition is macOS only. See [Known limitations](./limitations.md).
 
 ## Support
 

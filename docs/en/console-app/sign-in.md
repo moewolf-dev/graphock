@@ -4,7 +4,14 @@ documentation_status: draft
 
 # Sign in to Graphock
 
-Signing in links the desktop app to your Graphock account. It is required for cloud parsing and Pro features. Local parsing does not require an account.
+Signing in links the desktop app to your Graphock account. What it unlocks depends on the edition.
+
+| Edition | Sign-in |
+| --- | --- |
+| Direct (macOS and Windows) | Required when the app starts; also required for cloud parsing and Pro |
+| Mac App Store (macOS) | Only required for cloud parsing; every local feature works without an account |
+
+A signed-in account has the monthly cloud parsing allowance. Pro is a Direct purchase and is verified for the signed-in account.
 
 ## What happens when you sign in
 
