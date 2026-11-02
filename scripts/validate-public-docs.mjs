@@ -4,7 +4,7 @@ import { extname, join, relative, resolve } from 'node:path'
 
 const root = resolve(new URL('..', import.meta.url).pathname)
 const docsRoot = join(root, 'docs')
-const locales = new Set(['en', 'zh', 'fr', 'es', 'ja'])
+const locales = new Set(['en', 'zh', 'fr', 'ja'])
 const allowedExtensions = new Set(['.md', '.png', '.jpg', '.jpeg', '.webp', '.svg', '.gif'])
 const maxFileBytes = 5 * 1024 * 1024
 const errors = []

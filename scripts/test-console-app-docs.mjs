@@ -28,7 +28,7 @@ const pages = [
   'backup-and-recovery',
   'faq'
 ]
-const locales = ['zh', 'fr', 'es', 'ja']
+const locales = ['zh', 'fr', 'ja']
 
 const read = (...parts) => readFileSync(join(root, ...parts), 'utf8')
 const errors = []
