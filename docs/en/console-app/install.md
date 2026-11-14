@@ -8,7 +8,7 @@ documentation_status: draft
 
 **Status: available when a signed package is listed on the download page.**
 
-1. Open [graphock.com/download](/download) and choose the package for your Mac. Both Apple silicon and Intel packages are offered only when they have been built and signed for release.
+1. Open [graphock.com/download](https://graphock.com/download) and choose the package for your Mac. Both Apple silicon and Intel packages are offered only when they have been built and signed for release.
 2. Open the `.dmg` and drag **Graphock Direct** to **Applications**, or unzip the `.zip` and move the app yourself. The Mac App Store build is named **Graphock**.
 3. Start the app from Applications. macOS may ask you to confirm that it was downloaded from the internet.
 4. Sign in with your Graphock account. The Direct build requires an account before the workspace opens; see [Sign in](./sign-in.md).
