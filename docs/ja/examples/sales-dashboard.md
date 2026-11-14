@@ -1,3 +1,7 @@
-# Sales Dashboard
+---
+translation_status: missing
+---
 
-Coming soon - Example of a sales analytics dashboard.
+# Graphock documentation
+
+Translation is pending after the product documentation correction. Read the [current English source](../../en/examples/sales-dashboard.md).

@@ -1,3 +1,7 @@
-# Share & Collaborate
+---
+translation_status: missing
+---
 
-Coming soon - Share your work and collaborate with your team.
+# Graphock documentation
+
+Translation is pending after the product documentation correction. Read the [current English source](../../en/share-collaborate/index.md).

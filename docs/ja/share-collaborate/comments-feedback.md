@@ -1,3 +1,7 @@
-# Comments & Feedback
+---
+translation_status: missing
+---
 
-Coming soon - Add comments and get feedback on your work.
+# Graphock documentation
+
+Translation is pending after the product documentation correction. Read the [current English source](../../en/share-collaborate/comments-feedback.md).

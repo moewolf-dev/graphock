@@ -1,116 +1,20 @@
-# Sign Up for Graphock
-
-Create your free Graphock account in minutes and start visualizing your data today.
-
-## Creating Your Account
-
-### Step 1: Visit the Sign Up Page
-
-Go to [https://graphock.com/signup](https://graphock.com/signup) or click the **Sign Up** button on our homepage.
-
-### Step 2: Enter Your Information
-
-Provide the following details:
-
-- **Email Address**: Your work or personal email
-- **Password**: Create a strong password
-- **Full Name**: Your display name
-- **Company** (optional): Your organization
-
-### Step 3: Verify Your Email
-
-Check your inbox for a verification email. Click the link to activate your account.
-
-### Step 4: Complete Your Profile
-
-Add optional information to personalize your experience:
-
-- Profile picture
-- Time zone
-- Preferred language
-
-## Account Types
-
-### Free Plan
-
-Perfect for individuals and small projects:
-
-- Up to 5 dashboards
-- 1GB of data storage
-- Basic chart types
-- Community support
-
-### Pro Plan
-
-For professionals and teams:
-
-- Unlimited dashboards
-- 50GB of data storage
-- Advanced chart types
-- Priority support
-- Team collaboration
-
-### Enterprise Plan
-
-For large organizations:
-
-- Unlimited everything
-- Custom integrations
-- Dedicated support
-- SSO and advanced security
-- On-premise deployment
-
-[View pricing →](https://graphock.com/pricing)
-
-## Signing In
-
-Once your account is created, you can sign in anytime:
-
-1. Go to [https://graphock.com/login](https://graphock.com/login)
-2. Enter your email and password
-3. Click **Sign In**
-
-**Tip**: Check "Remember me" to stay signed in on your device.
-
-## Forgot Your Password?
-
-If you forget your password:
-
-1. Click **Forgot Password** on the sign-in page
-2. Enter your email address
-3. Check your inbox for a password reset link
-4. Create a new password
-
-## Troubleshooting
-
-### Didn't Receive Verification Email?
-
-1. Check your spam folder
-2. Wait 5-10 minutes for delivery
-3. Request a new verification email
-
-### Email Already Registered?
-
-If you see "Email already registered":
-
-- You might already have an account - try signing in
-- Or reset your password if you've forgotten it
-
-## Security Tips
-
-- Use a strong, unique password
-- Enable two-factor authentication (available on Pro plan)
-- Don't share your credentials
-- Sign out from shared devices
-
-## Next Steps
-
-After creating your account:
-
-1. [Import your data](/get-data/connect-sources)
-2. [Create your first visualization](/getting-started/first-visualization)
-3. [Build a dashboard](/create-visualizations/build-dashboard)
-
+---
+documentation_status: current
+reviewed_at: 2026-10-14
 ---
 
-Ready to start? [Import Data Now →](/get-data/connect-sources)
+# Install and sign in
+
+Download a desktop package matching your operating system and architecture from the Graphock website. Keep the version information when reporting a problem; available packages and account access may change between releases.
+
+## Sign-in flow
+
+Open the installed application and use its login screen. The app starts a browser-based authentication flow. Complete that flow with your existing account, then return to the desktop app when prompted. The website's console login and the desktop callback have different destinations; do not replace a desktop callback with an unrelated web route.
+
+If the browser finishes authentication but the app remains signed out, retry from the app and confirm that the operating system allowed the desktop callback to open the installed application. Do not paste access tokens or callback URLs into issue reports.
+
+## Workspace access
+
+Signing in is required for the current desktop application. Access to a cloud workspace or a particular processing service depends on account permissions and configuration. A successful sign-in does not guarantee that every provider is configured or that cloud processing is enabled.
+
+After login, follow the [interface tour](./tour-interface.md). Never include credentials, account tokens or private files in a support message.

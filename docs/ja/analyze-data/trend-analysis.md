@@ -1,3 +1,7 @@
-# Trend Analysis
+---
+translation_status: missing
+---
 
-Coming soon - Analyze trends in your data over time.
+# Graphock documentation
+
+Translation is pending after the product documentation correction. Read the [current English source](../../en/analyze-data/trend-analysis.md).

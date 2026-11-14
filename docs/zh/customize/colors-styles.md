@@ -1,3 +1,7 @@
-# Colors & Styles
+---
+translation_status: missing
+---
 
-Coming soon - Apply colors and styles to your charts.
+# Graphock documentation
+
+Translation is pending after the product documentation correction. Read the [current English source](../../en/customize/colors-styles.md).

@@ -1,3 +1,7 @@
-# Format Visuals
+---
+translation_status: missing
+---
 
-Coming soon - Format your visualizations for better readability.
+# Graphock documentation
+
+Translation is pending after the product documentation correction. Read the [current English source](../../en/customize/format-visuals.md).

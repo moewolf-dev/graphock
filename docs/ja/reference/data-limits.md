@@ -1,3 +1,7 @@
-# Data Limits
+---
+translation_status: missing
+---
 
-Coming soon - Learn about data size and performance limits.
+# Graphock documentation
+
+Translation is pending after the product documentation correction. Read the [current English source](../../en/reference/data-limits.md).

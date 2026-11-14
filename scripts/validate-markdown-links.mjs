@@ -61,7 +61,7 @@ function validateLinks(file, text) {
 function resolvePublicDocsRoute(file, route) {
   const docsRoot = resolve(root, 'docs')
   const fileLocale = relative(docsRoot, file).split(sep)[0]
-  if (!['en', 'zh', 'fr', 'es', 'ja'].includes(fileLocale)) {
+  if (!['en', 'zh', 'fr', 'ja'].includes(fileLocale)) {
     // Absolute paths elsewhere belong to the marketing site, not the docs tree.
     return null
   }
@@ -72,7 +72,7 @@ function resolvePublicDocsRoute(file, route) {
   if (['pricing', 'download', 'about', 'community-templates', 'online-tools', 'datasets', 'app', 'user', 'contact', 'privacy', 'terms'].includes(first)) {
     return null
   }
-  const prefixLocales = { cn: 'zh', zh: 'zh', fr: 'fr', es: 'es', ja: 'ja', en: 'en' }
+  const prefixLocales = { cn: 'zh', zh: 'zh', fr: 'fr', ja: 'ja', en: 'en' }
   if (prefixLocales[first]) {
     locale = prefixLocales[first]
     normalized = normalized.split('/').slice(1).join('/')

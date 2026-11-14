@@ -1,3 +1,7 @@
-# Refresh Data
+---
+translation_status: missing
+---
 
-Coming soon - Learn how to refresh your data sources.
+# Graphock documentation
+
+Translation is pending after the product documentation correction. Read the [current English source](../../en/get-data/refresh-data.md).
